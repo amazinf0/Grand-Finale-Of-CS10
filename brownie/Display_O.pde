@@ -1,4 +1,4 @@
- void display(){
+  /*void display(){
  //Display Orientation
   String ls = "Landscape or Square", p = "Portrait", DO = "Display Orientation", instruct = "Flip your screen";
   //String orientation = () ? true : false; //This is a Trenary operator to populate a variable 
@@ -13,3 +13,4 @@
   };
   //
  }
+ */
