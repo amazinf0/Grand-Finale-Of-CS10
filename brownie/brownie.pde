@@ -3,7 +3,7 @@ int appWidth, appHeight, largerDimension, smallerDimension;
 Boolean OS_On=false;
 //
 void setup() {
-  size(3000, 1500);
+  size(1000, 500);
   //fullScreen(); //displayWidth, displayHeight
   appWidth = width;
   appHeight = height;
@@ -16,7 +16,7 @@ void setup() {
 }//End setup
 //
 void draw() {
-  //Assignemnt #2: OS Level Mouse CLick and Splash Screen
+  //Assignment #2: OS Level Mouse CLick and Splash Screen
   if ( OS_On==true ) splashScreen(); //OS Level MOUSE Click
   //
 }//End draw
