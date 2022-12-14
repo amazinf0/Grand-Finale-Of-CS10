@@ -1,7 +1,10 @@
 //Global Variables
 int appWidth, appHeight, largerDimension, smallerDimension;
 Boolean OS_On=false, splashScreenStart=false;
-color resetDefaultInk=#000000, white=#FFFFFF, purple=#FF00FF;
+Boolean nightMode=false; //Bonus #1: populate with sytem clock
+//Ultimate Bonus, Gr 11: use API-sunrise for system clock start, API-sunset for system clock end
+//Hint: https://processing.org/reference/hour_.html
+color resetDefaultInk=#FFFFFF, white=#FFFFFF, purple=#FF00FF;
 /* Night Mode Comment
  Purple not for Night Mode, full BLUE
  resetDefaultInk is Night Mode friendly
@@ -34,7 +37,22 @@ void keyPressed() {
     splashScreenStart = true;
     backgroundImage();
   }//End Splash Screen SPACE Bar
- //
+  //
+  //Key Board Short Cuts
+  if ( key==CODED || keyCode==ESC ) exit();
+  if ( key=='Q' || key=='q' ) exit();
+  if ( key=='N' || key=='n' ) {
+    if ( nightMode==false ) { 
+      nightMode = true;
+      backgroundImage();
+      //Reminder: must redraw all of rectangles too, and Home Screen
+    } else { 
+      nightMode = false;
+      backgroundImage();
+      //Reminder: must redraw all of rectangles too, and Home Screen
+    }
+  }
+  //
 }//End keyPressed
 //
 void mousePressed() {
@@ -42,4 +60,4 @@ void mousePressed() {
   if ( OS_On==false ) OS_On=true;//End OS Level MouseClick
 }//End mousePressed
 //
-//End MAIN Program
+//End MAIN Program 

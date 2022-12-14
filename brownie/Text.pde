@@ -1,4 +1,5 @@
 String spaceBar = "Press the Space Bar to Continue";
+String quit = "Quit";
 PFont font;
 void textSetup() {
   //Minimum Expectation is SINGLE FONT
@@ -18,7 +19,18 @@ void spaceBarText() {
   int size = 20; //Change the number until it fits
   textFont(font, size); 
   text( spaceBar, startX, startY, startWidth, startHeight );
-  fill(resetDefaultInk);
+  noFill();
+}//End spaceBarText
+//
+void quitButtonText() {
+  //rect( quitX, quitY, quitWidth, quitHeight );
+  fill(purple); //Ink, hexidecimal copied from Color Selector
+  textAlign(CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  int size = 33; //Change the number until it fits
+  textFont(font, size); 
+  text( quit, quitX, quitY, quitWidth, quitHeight );
+  noFill();
 }//End spaceBarText
 //
 //End Text Subprogram
