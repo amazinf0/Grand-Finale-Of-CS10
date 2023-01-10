@@ -55,6 +55,7 @@ void draw() {
   fill(resetWhite);
   //
   startImage();
+  tint(255, 255);
   startImage= loadImage("../Images Used/green.png"); //width 512 height 512
   image(startImage, startImageX, startImageY, startImageWidth, startImageHeight);
   //
@@ -96,6 +97,7 @@ void draw() {
     fill(buttonFill); //2-colors to start , remember nightMode adds choice
     rect(OkX, OkY, OkW, OkH);
     oogwayImage();
+    tint(255, 255);
     oogwayImage= loadImage("../Images Used/waltre.jpeg");
     image(oogwayImage, oogwayImageX, oogwayImageY, oogwayImageWidth, oogwayImageHeight);
     Delight();
@@ -108,9 +110,11 @@ void draw() {
     fill(resetWhite);
     Student();
     rabbitStandingImage();
+    tint(255, 255);
     rabbitStandingImage= loadImage("../Images Used/jesse.png");
     image(rabbitStandingImage, rabbitStandingImageX, rabbitStandingImageY, rabbitStandingImageWidth, rabbitStandingImageHeight);
     raceImage();
+    tint(255, 255);
     raceImage= loadImage("../Images Used/jesad.jpeg");
     image(raceImage, raceImageX, raceImageY, raceImageWidth, raceImageHeight);
     fill(green);
@@ -126,7 +130,8 @@ void draw() {
     rect( PathX1, PathY1, PathButtonW1, PathButtonH1 );
     fill(resetWhite);
     pressFImage();
-    pressFImage= loadImage("../Images Used/bed.png");//tint(red, 125);
+    tint(red, 200);
+    pressFImage= loadImage("../Images Used/bed.png");
     image(pressFImage, pressFImageX, pressFImageY, pressFImageWidth, pressFImageHeight);
     acceptChoiceText1();
     }
@@ -137,6 +142,7 @@ void draw() {
     rect( PathX1, PathY1, PathButtonW1, PathButtonH1 );
     fill(resetWhite);
     gravestoneImage();
+    tint(255, 255);
     gravestoneImage= loadImage("../Images Used/huell.gif");
     image(gravestoneImage, gravestoneImageX, gravestoneImageY, gravestoneImageWidth, gravestoneImageHeight);
     fill(resetWhite);
@@ -150,6 +156,7 @@ void draw() {
     rect( PathX, PathY, PathButtonW, PathButtonH );
     fill(resetWhite);
     givemoneyImage();
+    tint(255, 255);
     givemoneyImage= loadImage("../Images Used/crystals.jpeg");
     image(givemoneyImage, givemoneyImageX, givemoneyImageY, givemoneyImageWidth, givemoneyImageHeight);
     if ( mouseX> lottoX && mouseX< lottoX+lottoW && mouseY> lottoY && mouseY< lottoY+lottoH ) {
@@ -169,6 +176,7 @@ void draw() {
     rect( PathX, PathY, PathButtonW, PathButtonH );
     fill(resetWhite);
     lotteryImage();
+    tint(255, 255);
     lotteryImage= loadImage("../Images Used/chicken.png");
     image(lotteryImage, lotteryImageX, lotteryImageY, lotteryImageWidth, lotteryImageHeight);
     if ( mouseX> lottoX1 && mouseX< lottoX1+lottoW1 && mouseY> lottoY1 && mouseY< lottoY1+lottoH1 ) {
@@ -188,6 +196,7 @@ void draw() {
     rect( PathX, PathY, PathButtonW, PathButtonH );
     fill(resetWhite);
     robberImage();
+    tint(255, 255);
     robberImage= loadImage("../Images Used/bars.png");
     image(robberImage, robberImageX, robberImageY, robberImageWidth, robberImageHeight);
     lottoText3();
