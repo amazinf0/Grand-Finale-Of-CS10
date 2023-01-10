@@ -1,16 +1,19 @@
+   /* 
+   -Home Screen Expectations
+   - Background image using tint();
+   - In each: image, text, 2d shape, Button
+   - See Case Study
+   - Note: must have one image with aspect ratio
+   */
 //Global Variables
 color buttonFill, resetWhite=#FFFFFF, black=#000000, red=#FF0000, green=#00FF00, yellow=#FFFF00, brown=#643200, blue= #00FFFF, backgroundColor;
 Boolean startButton1ON=false, startButton2ON=false, okButton4ON=false, acceptButton1ON=false, declineButton1ON=false, okButton7ON=false, okButton8ON=false, okButton9ON=false;
+float quitX, quitY, QuitButtonW, QuitButtonH;
 int h = hour();
 //
 void setup() {
-  size(1200, 750);
-  if ( width > displayWidth || height > displayHeight ) {
-    //CANVAS Too Big
-    println("CANVAS needed to be readjusted to fit on your monitor.");
-  } else {
-    println("CANVAS is Good to go on your display.");
-  }//End CANVAS in Display Checker
+  size(1200, 700);
+  display();
   populationVariables();
   rect(HomeX, HomeY, HomeW, HomeH);
   rect(HomeX1, HomeY1, HomeW, HomeH);
@@ -68,6 +71,16 @@ void draw() {
   rect(ResetX, ResetY, ResetW, ResetH);
   fill(resetWhite);
   resetText();
+  //
+  if ( mouseX> quitX && mouseX< quitX+QuitButtonW && mouseY> quitY && mouseY< quitY+QuitButtonH ) {
+    buttonFill = green;
+  } else {
+    buttonFill = red;
+  }//End Hover-over
+  fill(buttonFill);
+  rect(quitX, quitY, QuitButtonW, QuitButtonH);
+  fill(resetWhite);
+  quitText();
   //First Start Choice
   //
   if ( startButton1ON==true ) {
@@ -113,7 +126,7 @@ void draw() {
     rect( PathX1, PathY1, PathButtonW1, PathButtonH1 );
     fill(resetWhite);
     pressFImage();
-    pressFImage= loadImage("../Images Used/bed.png");
+    pressFImage= loadImage("../Images Used/bed.png");//tint(red, 125);
     image(pressFImage, pressFImageX, pressFImageY, pressFImageWidth, pressFImageHeight);
     acceptChoiceText1();
     }
@@ -182,6 +195,7 @@ void draw() {
 }//End draw
 //
 void keyPressed() {
+  if (key=='e' || key=='E') exit();
 }//End keyPressed
 //
 void mousePressed() {
@@ -192,6 +206,7 @@ void mousePressed() {
   declineButton1ON=false;
   okButton7ON=false;
   okButton8ON=false;
+  if (mouseX> quitX && mouseX< quitX+QuitButtonW && mouseY> quitY && mouseY< quitY+QuitButtonH) exit();
   if ( mouseX>=PathX && mouseX<=PathX+PathButtonW && mouseY>=PathY && mouseY<=PathY+PathButtonH ) startButton1ON=true;
   if ( mouseX>=PathX1 && mouseX<=PathX1+PathButtonW1 && mouseY>=PathY1 && mouseY<=PathY+PathButtonH1 ) startButton2ON=true;
   if ( mouseX>=OkX && mouseX<=OkX+OkW && mouseY>=OkY && mouseY<=OkY+OkH ) okButton4ON=true;

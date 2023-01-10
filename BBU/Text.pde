@@ -31,6 +31,9 @@ String okText8 = "Yum";
 float okTextX8, okTextY8, okTextWidth8, okTextHeight8;
 String lottoText3 = "You Got Caught And Went To Jail For Life";
 float lottoTextX3, lottoTextY3, lottoTextWidth3, lottoTextHeight3;
+float QuitTX, QuitTY, QuitTW, QuitTH;
+String quitText = "Exit (E)";
+PFont QuitF;
 //
 void Option1() {
   //Population
@@ -104,15 +107,15 @@ void Student() {
 //
 void Accept() {
   //Population
-  acceptTextX1 = acceptButtonX1;
+  acceptTextX1 = HomeX;
   acceptTextY1 = acceptButtonY1;
-  acceptTextWidth1 = acceptButtonWidth1;
+  acceptTextWidth1 = acceptButtonWidth1/2;
   acceptTextHeight1 = acceptButtonHeight1;
   choice1TextFontBold = createFont("TimesNewRomanPS-BoldMT", 601);
   //
   fill(resetWhite);
   textAlign(CENTER, CENTER);
-  textFont(choice1TextFontBold, NormalSize); 
+  textFont(choice1TextFont1, NormalSize); 
   text(acceptText1, acceptTextX1, acceptTextY1, acceptTextWidth1, acceptTextHeight1);}
   //End Accept
 //
@@ -125,7 +128,7 @@ void declineText1() {
   //
   fill(resetWhite);
   textAlign(CENTER, CENTER);
-  textFont(choice1TextFont1, smallSize); //CHANGE TO BOLD
+  textFont(choice1TextFont1, NormalSize); //CHANGE TO BOLD
   text(declineText1, declineTextX1, declineTextY1, declineTextWidth1, declineTextHeight1);
 }//End declineText1
 //
@@ -241,5 +244,16 @@ void lottoText3() {
   textFont(startTextFont1, NormalSize);
   fill(red);
   text(lottoText3, lottoTextX3, lottoTextY3, lottoTextWidth3, lottoTextHeight3);
-  fill(resetWhite);
+  fill(resetWhite);}
+  //
+ void quitText() {
+  //Population
+  QuitTX = ResetX*1.5;
+  QuitTY = ResetY;
+  QuitTW = ResetW;
+  QuitTH = ResetH;
+  //
+  textAlign(CENTER, CENTER);
+  textFont(startTextFont1, bigSize);
+  text(quitText, QuitTX, QuitTY, QuitTW, QuitTH);
 }

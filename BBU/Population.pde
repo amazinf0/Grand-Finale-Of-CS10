@@ -65,7 +65,7 @@ void populationVariables() {
   //
   ResetX = HomeX1;
   ResetY = HomeY1;
-  ResetW = HomeW;
+  ResetW = HomeW/2;
   ResetH = HomeH*0.668;
   //
   lottoX = HomeX6;
@@ -76,4 +76,9 @@ void populationVariables() {
   lottoY1 = HomeY7+HomeH*2/3;
   lottoW1 = HomeW*1/4;
   lottoH1 = HomeH*1/3;
+  //
+  quitX = HomeX1*1.5;
+  quitY = HomeY1;
+  QuitButtonW = HomeW/2;
+  QuitButtonH = HomeH*0.668;
 }
