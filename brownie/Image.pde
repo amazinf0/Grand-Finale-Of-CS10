@@ -1,64 +1,82 @@
-PImage backgroundImage, quitButtonImage;
+//Global Variables
+PImage startImage;
+float startImageX, startImageY, startImageWidth, startImageHeight;
+PImage oogwayImage;
+float oogwayImageX, oogwayImageY, oogwayImageWidth, oogwayImageHeight;
+PImage rabbitStandingImage;
+float rabbitStandingImageX, rabbitStandingImageY, rabbitStandingImageWidth, rabbitStandingImageHeight;
+PImage raceImage; //10687379345_555c9954a1_b.jpeg
+float raceImageX, raceImageY, raceImageWidth, raceImageHeight;
+PImage pressFImage;
+float pressFImageX, pressFImageY, pressFImageWidth, pressFImageHeight;
+PImage gravestoneImage;
+float gravestoneImageX, gravestoneImageY, gravestoneImageWidth, gravestoneImageHeight;
+PImage givemoneyImage;
+float givemoneyImageX, givemoneyImageY, givemoneyImageWidth, givemoneyImageHeight;
+PImage lotteryImage;
+float lotteryImageX, lotteryImageY, lotteryImageWidth, lotteryImageHeight;
+PImage robberImage;
+float robberImageX, robberImageY, robberImageWidth, robberImageHeight;
 //
-void imageSetup() {//Image Population
-  backgroundImage=loadImage("../Images/brownie.jpg");
-  //quitButtonImage is loaded here if different
-}//End imageSetup
+void startImage() {
+  startImageX = HomeX4;
+  startImageY = HomeY4;
+  startImageWidth = HomeW; //CANVAS (0,0) means point doesn't match to rectangle, missing outline on 2 sides
+  startImageHeight = HomeH;
+}//End startImage
 //
-void imageTintNightMode() {
-  //Control night mode, colour, with IF 
-  //if (nightMode==true) tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity);
-  //if (nightMode==false) tint(tintDayMode, tintDayModeOpacity);
-  if ( nightMode==true ) {
-    tint(tintRed, tintGreen, tintBlue, tintNightModeOpacity);
-  } else {
-    tint(tintDayMode, tintDayModeOpacity);
-  }
-}//End imageTintNightMode
+void oogwayImage() {
+  oogwayImageX = TeachX;
+  oogwayImageY = TeachY;
+  oogwayImageWidth = TeachW;
+  oogwayImageHeight = HomeH/1.2;
+}//End oogwayImage
 //
-void quitButtonImage() {
-  quitButtonImage = backgroundImage;
-  //
-  //Image Dimensions
-  float quitButtonImageWidth=1707, quitButtonImageHeight=2560;
-  //rect( quitButtonImageRectX, quitButtonImageRectY, quitButtonImageRectWidth, quitButtonImageRectHeight );
-  //Following vars must be populated or debugger error
-  float quitButtonImageWidth_Adjusted=0.0, quitButtonImageHeight_Adjusted=0.0;
-  float quitButtonImageWidth_Calculated=0.0, quitButtonImageHeight_Calculated=0.0;
-  float largerDimension=0.0, smallerDimension=0.0;
-  float imageWidthRatio=0.0, imageHeightRatio=0.0; 
-  //
-  if ( quitButtonImageWidth >= quitButtonImageHeight ) {//Image's largest dimension, Landscape or Square
-    largerDimension = quitButtonImageWidth;
-    smallerDimension = quitButtonImageHeight;
-    //
-    //Image's matching dimension to rectangle's matching dimension
-    quitButtonImageWidth_Adjusted = quitButtonImageRectWidth;
-    imageHeightRatio = smallerDimension / largerDimension; //value<1, main point of algorithm
-    quitButtonImageHeight_Calculated = imageHeightRatio * quitButtonImageRectWidth;
-    //
-    //Debugging: x-value must be centered
-    float centerX=appWidth*1/2;
-    quitButtonImageRectX = centerX - quitButtonImageWidth_Adjusted * 1/2;
-    imageTintNightMode();
-    image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageWidth_Adjusted, quitButtonImageHeight_Calculated );
-    //
-  } else {//Portrait
-    largerDimension = quitButtonImageHeight;
-    smallerDimension = quitButtonImageWidth;
-    //
-    //Image's matching dimension to rectangle's matching dimension
-    quitButtonImageHeight_Adjusted = quitButtonImageRectHeight;
-    imageWidthRatio = smallerDimension / largerDimension; //value<1, main point of algorithm
-    quitButtonImageWidth_Calculated = imageWidthRatio * quitButtonImageRectHeight;
-    //
-    //Debugging: x-value must be centered
-    float centerX=appWidth*1/2;
-    quitButtonImageRectX = centerX - quitButtonImageWidth_Calculated * 1/2;
-    imageTintNightMode();
-    image( quitButtonImage, quitButtonImageRectX, quitButtonImageRectY, quitButtonImageWidth_Calculated, quitButtonImageHeight_Adjusted );
-    //
-  }
-}//End quitButtonImage
+void rabbitStandingImage() {
+  rabbitStandingImageX = HomeX;
+  rabbitStandingImageY = HomeY+HomeH*1/3;
+  rabbitStandingImageWidth = HomeW*1/2;
+  rabbitStandingImageHeight = HomeH*11/20;
+}//End rabbitStandingImage
 //
-//End Image Subprogram
+void raceImage() {
+  raceImageX = rabbitStandingImageWidth;
+  raceImageY = rabbitStandingImageY;
+  raceImageWidth = rabbitStandingImageWidth;
+  raceImageHeight = rabbitStandingImageHeight*1.02;
+}//End raceImage
+//
+void pressFImage() {
+  pressFImageX = HomeX2*10/10;
+  pressFImageY = HomeY3;
+  pressFImageWidth = HomeW;
+  pressFImageHeight = HomeH;
+}//End rabbitTurtleImage
+//
+void gravestoneImage() {
+  gravestoneImageX = HomeX2;
+  gravestoneImageY = HomeY2;
+  gravestoneImageWidth = HomeW;
+  gravestoneImageHeight = HomeH;
+}
+//
+void givemoneyImage() {
+  givemoneyImageX = HomeX6;
+  givemoneyImageY = HomeY6;
+  givemoneyImageWidth = HomeW;
+  givemoneyImageHeight = HomeH;
+}
+//
+void lotteryImage() {
+  lotteryImageX = HomeX7;
+  lotteryImageY = HomeY7;
+  lotteryImageWidth = HomeW;
+  lotteryImageHeight = HomeH;
+}
+//
+void robberImage() {
+  robberImageX = HomeX8;
+  robberImageY = HomeY8;
+  robberImageWidth = HomeW;
+  robberImageHeight = HomeH;
+}

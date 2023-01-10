@@ -1,70 +1,222 @@
 //Global Variables
-int appWidth, appHeight, largerDimension, smallerDimension;
-Boolean OS_On=false, splashScreenStart=false;
-Boolean nightMode=false; //Bonus #1: populate with sytem clock
-//Ultimate Bonus, Gr 11: use API-sunrise for system clock start, API-sunset for system clock end
-//Hint: https://processing.org/reference/hour_.html
-color resetDefaultInk=#FFFFFF, white=#FFFFFF, purple=#FF00FF;
-/* Night Mode Comment
- Purple not for Night Mode, full BLUE
- resetDefaultInk is Night Mode friendly
- */
+color buttonFill, resetWhite=#FFFFFF, black=#000000, red=#FF0000, green=#00FF00, yellow=#FFFF00, brown=#643200, blue= #00FFFF, backgroundColor;
+Boolean startButton1ON=false, startButton2ON=false, okButton4ON=false, acceptButton1ON=false, declineButton1ON=false, okButton7ON=false, okButton8ON=false, okButton9ON=false;
+int h = hour();
 //
 void setup() {
-  size(600, 400);
-  //fullScreen(); //displayWidth, displayHeight
-  appWidth = width;
-  appHeight = height;
-  //Display Algorithm from Hello World
-  display(); //Purpose: CANVAS fits in monitor & dimension size is known
-  //smaller & larger dimension from Display Algorithm
-  println("Smaller Dimension is", smallerDimension, "Larger Dimension is", largerDimension);
-  population(); //Values based on DISPLAY
-  textSetup();
-  imageSetup();
+  size(1200, 750);
+  if ( width > displayWidth || height > displayHeight ) {
+    //CANVAS Too Big
+    println("CANVAS needed to be readjusted to fit on your monitor.");
+  } else {
+    println("CANVAS is Good to go on your display.");
+  }//End CANVAS in Display Checker
+  populationVariables();
+  rect(HomeX, HomeY, HomeW, HomeH);
+  rect(HomeX1, HomeY1, HomeW, HomeH);
+  rect(HomeX2, HomeY2, HomeW, HomeH);
+  rect(HomeX3, HomeY3, HomeW, HomeH);
+  rect(HomeX4, HomeY4, HomeW, HomeH);
+  rect(HomeX5, HomeY5, HomeW, HomeH);
+  rect(HomeX6, HomeY6, HomeW, HomeH);
+  rect(HomeX7, HomeY7, HomeW, HomeH);
+  rect(HomeX8, HomeY8, HomeW, HomeH);
+  if (h >= 20 || h<=7) {
+    backgroundColor = color(random(100, 255), random(255), 0);
+    println("nightMode ON");
+  } else {
+    backgroundColor = color(random(100, 255), random(255), random(255));
+    println("nightMode OFF");
+  }
+  background(backgroundColor);
 }//End setup
 //
 void draw() {
-  //Assignemnt #2: OS Level Mouse CLick and Splash Screen
-  if ( OS_On==true && splashScreenStart==false ) splashScreen(); //OS Level MOUSE Click
-  if ( splashScreenStart==true ) homeScreen();
-  println(splashScreenStart);
+  //Hover-over start button 1
+  if ( mouseX> PathX && mouseX< PathX+PathButtonW && mouseY> PathY && mouseY< PathY+PathButtonH ) {
+    buttonFill = black;
+  } else {
+    buttonFill = red;
+  }//End Hover-over
+  fill(buttonFill); //2-colors to start , remember nightMode adds choice
+  rect(PathX, PathY, PathButtonW, PathButtonH);
+  //Hover-over start button 2
+  if ( mouseX> PathX1 && mouseX< PathX1+PathButtonW1 && mouseY> PathY1 && mouseY< PathY1+PathButtonH1 ) {
+    buttonFill = black;
+  } else {
+    buttonFill = red;
+  }//End Hover-over
+  fill(buttonFill); //2-colors to start , remember nightMode adds choice
+  rect(PathX1, PathY1, PathButtonW1, PathButtonH1);
   //
+  fill(resetWhite);
+  //
+  startImage();
+  startImage= loadImage("../Images Used/green.png"); //width 512 height 512
+  image(startImage, startImageX, startImageY, startImageWidth, startImageHeight);
+  //
+  Option1();
+  Option2();
+  //
+  //Hover-over start button 2
+  if ( mouseX> ResetX && mouseX< ResetX+ResetW && mouseY> ResetY && mouseY< ResetY+ResetH ) {
+    buttonFill = green;
+  } else {
+    buttonFill = red;
+  }//End Hover-over
+  fill(buttonFill);
+  rect(ResetX, ResetY, ResetW, ResetH);
+  fill(resetWhite);
+  resetText();
+  //First Start Choice
+  //
+  if ( startButton1ON==true ) {
+    fill(backgroundColor);
+    rect( PathX1, PathY1, PathButtonW1, PathButtonH1 );
+    fill(resetWhite);
+    //Hover-over OK BUTTON
+    if ( mouseX> OkX && mouseX< OkX+OkW && mouseY> OkY && mouseY< OkY+OkH ) {
+      buttonFill = green;
+    } else {
+      buttonFill = yellow;
+    }//End Hover-over OK BUTTON
+    fill(buttonFill); //2-colors to start , remember nightMode adds choice
+    rect(OkX, OkY, OkW, OkH);
+    oogwayImage();
+    oogwayImage= loadImage("../Images Used/waltre.jpeg");
+    image(oogwayImage, oogwayImageX, oogwayImageY, oogwayImageWidth, oogwayImageHeight);
+    Delight();
+    Teach();
+  }//End START Button 1
+  //
+  if ( okButton4ON==true ) {
+    fill(backgroundColor);
+    rect( PathX1, PathY1, PathButtonW1, PathButtonH1 );
+    fill(resetWhite);
+    Student();
+    rabbitStandingImage();
+    rabbitStandingImage= loadImage("../Images Used/jesse.png");
+    image(rabbitStandingImage, rabbitStandingImageX, rabbitStandingImageY, rabbitStandingImageWidth, rabbitStandingImageHeight);
+    raceImage();
+    raceImage= loadImage("../Images Used/jesad.jpeg");
+    image(raceImage, raceImageX, raceImageY, raceImageWidth, raceImageHeight);
+    fill(green);
+    rect(acceptButtonX1, acceptButtonY1, acceptButtonWidth1, acceptButtonHeight1);    
+    fill(red);
+    rect(DeclineX, DeclineY, DeclineW, DeclineH);
+    Accept();
+    declineText1();
+  }//End okButton 4th rect
+  //
+  if ( declineButton1ON==true ) {
+    fill(backgroundColor);
+    rect( PathX1, PathY1, PathButtonW1, PathButtonH1 );
+    fill(resetWhite);
+    pressFImage();
+    pressFImage= loadImage("../Images Used/bed.png");
+    image(pressFImage, pressFImageX, pressFImageY, pressFImageWidth, pressFImageHeight);
+    acceptChoiceText1();
+    }
+  //
+  if ( acceptButton1ON==true ) {
+    acceptButton1ON=false;
+    fill(backgroundColor);
+    rect( PathX1, PathY1, PathButtonW1, PathButtonH1 );
+    fill(resetWhite);
+    gravestoneImage();
+    gravestoneImage= loadImage("../Images Used/huell.gif");
+    image(gravestoneImage, gravestoneImageX, gravestoneImageY, gravestoneImageWidth, gravestoneImageHeight);
+    fill(resetWhite);
+    declineChoiceText1();
+  }
+  //
+  //Second Start Choice
+  //
+  if ( startButton2ON==true ) {
+    fill(backgroundColor);
+    rect( PathX, PathY, PathButtonW, PathButtonH );
+    fill(resetWhite);
+    givemoneyImage();
+    givemoneyImage= loadImage("../Images Used/crystals.jpeg");
+    image(givemoneyImage, givemoneyImageX, givemoneyImageY, givemoneyImageWidth, givemoneyImageHeight);
+    if ( mouseX> lottoX && mouseX< lottoX+lottoW && mouseY> lottoY && mouseY< lottoY+lottoH ) {
+      buttonFill = green;
+    } else {
+      buttonFill = yellow;
+    }
+    fill(buttonFill);
+    rect(lottoX, lottoY, lottoW, lottoH);
+    fill(resetWhite);
+    lottoText1();
+    okText7();
+  }//End START Button 2
+  //
+  if ( okButton7ON==true ) {
+    fill(backgroundColor);
+    rect( PathX, PathY, PathButtonW, PathButtonH );
+    fill(resetWhite);
+    lotteryImage();
+    lotteryImage= loadImage("../Images Used/chicken.png");
+    image(lotteryImage, lotteryImageX, lotteryImageY, lotteryImageWidth, lotteryImageHeight);
+    if ( mouseX> lottoX1 && mouseX< lottoX1+lottoW1 && mouseY> lottoY1 && mouseY< lottoY1+lottoH1 ) {
+      buttonFill = green;
+    } else {
+      buttonFill = yellow;
+    }
+    fill(buttonFill);
+    rect(lottoX1, lottoY1, lottoW1, lottoH1);
+    fill(resetWhite);
+    lottoText2();
+    okText8();
+  }//End okButton7
+  //
+  if ( okButton8ON==true ) {
+    fill(backgroundColor);
+    rect( PathX, PathY, PathButtonW, PathButtonH );
+    fill(resetWhite);
+    robberImage();
+    robberImage= loadImage("../Images Used/bars.png");
+    image(robberImage, robberImageX, robberImageY, robberImageWidth, robberImageHeight);
+    lottoText3();
+  }
 }//End draw
 //
 void keyPressed() {
-  //Splash Screen SPACE Bar
-  if ( OS_On==true && key==' ' ) {
-    splashScreenStart = true;
-    backgroundImage();
-  }//End Splash Screen SPACE Bar
-  //
-  //Key Board Short Cuts
-  if ( splashScreenStart==true ) {//Home Screen Only Variables
-    if ( key==CODED || keyCode==ESC ) exit();
-    if ( key=='Q' || key=='q' ) exit();
-    if ( key=='N' || key=='n' ) {
-      if ( nightMode==false ) { 
-        nightMode = true;
-        backgroundImage();
-        //Reminder: must redraw all of rectangles too, and Home Screen
-      } else { 
-        nightMode = false;
-        backgroundImage();
-        //Reminder: must redraw all of rectangles too, and Home Screen
-      }
-    }
-  }//Home Screen Only
-  //
 }//End keyPressed
 //
 void mousePressed() {
-  //OS Level MouseClick
-  if ( OS_On==false ) OS_On=true;//End OS Level MouseClick
-  if ( splashScreenStart==true ) {//Home Screen Only Variables
-    if ( mouseX>=quitX && mouseX<=quitX+quitWidth && mouseY>=quitY && mouseY<=quitY+quitHeight ) exit();
-  }//Home Screen Only
-  //
+  startButton1ON=false;
+  startButton2ON=false;
+  okButton4ON=false;
+  acceptButton1ON=false;
+  declineButton1ON=false;
+  okButton7ON=false;
+  okButton8ON=false;
+  if ( mouseX>=PathX && mouseX<=PathX+PathButtonW && mouseY>=PathY && mouseY<=PathY+PathButtonH ) startButton1ON=true;
+  if ( mouseX>=PathX1 && mouseX<=PathX1+PathButtonW1 && mouseY>=PathY1 && mouseY<=PathY+PathButtonH1 ) startButton2ON=true;
+  if ( mouseX>=OkX && mouseX<=OkX+OkW && mouseY>=OkY && mouseY<=OkY+OkH ) okButton4ON=true;
+  if ( mouseX>=acceptButtonX1 && mouseX<=acceptButtonX1+acceptButtonWidth1 && mouseY>=acceptButtonY1 && mouseY<=acceptButtonY1+acceptButtonHeight1 ) {    
+    acceptButton1ON=true;
+    declineButton1ON=false;
+  }
+  if ( mouseX>=DeclineX && mouseX<=DeclineX+DeclineW && mouseY>=DeclineY && mouseY<=DeclineY+DeclineH ) {
+    declineButton1ON=true;
+    acceptButton1ON=false;
+  }
+  if ( mouseX> lottoX && mouseX< lottoX+lottoW && mouseY> lottoY && mouseY< lottoY+lottoH ) okButton7ON=true;
+  if ( mouseX> lottoX1 && mouseX< lottoX1+lottoW1 && mouseY> lottoY1 && mouseY< lottoY1+lottoH1 ) okButton8ON=true;
+  if ( mouseX> ResetX && mouseX< ResetX+ResetW && mouseY> ResetY && mouseY< ResetY+ResetH ) {
+    fill(backgroundColor);
+    rect(HomeX, HomeY, HomeW, HomeH);
+    rect(HomeX1, HomeY1, HomeW, HomeH);
+    rect(HomeX2, HomeY2, HomeW, HomeH);
+    rect(HomeX3, HomeY3, HomeW, HomeH);
+    rect(HomeX5, HomeY5, HomeW, HomeH);
+    rect(HomeX6, HomeY6, HomeW, HomeH);
+    rect(HomeX7, HomeY7, HomeW, HomeH);
+    rect(HomeX8, HomeY8, HomeW, HomeH);
+    fill(resetWhite);
+  }
 }//End mousePressed
 //
 //End MAIN Program
