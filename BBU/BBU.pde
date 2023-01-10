@@ -1,15 +1,7 @@
-   /* 
-   -Home Screen Expectations
-   - Background image using tint();
-   - In each: image, text, 2d shape, Button
-   - See Case Study
-   - Note: must have one image with aspect ratio
-   */
 //Global Variables
 color buttonFill, resetWhite=#FFFFFF, black=#000000, red=#FF0000, green=#00FF00, yellow=#FFFF00, brown=#643200, blue= #00FFFF, backgroundColor;
 Boolean startButton1ON=false, startButton2ON=false, okButton4ON=false, acceptButton1ON=false, declineButton1ON=false, okButton7ON=false, okButton8ON=false, okButton9ON=false;
 float quitX, quitY, QuitButtonW, QuitButtonH;
-int h = hour();
 //
 void setup() {
   size(1200, 700);
@@ -24,13 +16,7 @@ void setup() {
   rect(HomeX6, HomeY6, HomeW, HomeH);
   rect(HomeX7, HomeY7, HomeW, HomeH);
   rect(HomeX8, HomeY8, HomeW, HomeH);
-  if (h >= 20 || h<=7) {
-    backgroundColor = color(random(100, 255), random(255), 0);
-    println("nightMode ON");
-  } else {
-    backgroundColor = color(random(100, 255), random(255), random(255));
-    println("nightMode OFF");
-  }
+  nightMode();
   background(backgroundColor);
 }//End setup
 //
@@ -56,7 +42,7 @@ void draw() {
   //
   startImage();
   tint(255, 255);
-  startImage= loadImage("../Images Used/green.png"); //width 512 height 512
+  startImage= loadImage("../Images Used/green.png"); 
   image(startImage, startImageX, startImageY, startImageWidth, startImageHeight);
   //
   Option1();
@@ -71,7 +57,7 @@ void draw() {
   fill(buttonFill);
   rect(ResetX, ResetY, ResetW, ResetH);
   fill(resetWhite);
-  resetText();
+  BeginT();
   //
   if ( mouseX> quitX && mouseX< quitX+QuitButtonW && mouseY> quitY && mouseY< quitY+QuitButtonH ) {
     buttonFill = green;
@@ -122,7 +108,7 @@ void draw() {
     fill(red);
     rect(DeclineX, DeclineY, DeclineW, DeclineH);
     Accept();
-    declineText1();
+    DeclineT();
   }//End okButton 4th rect
   //
   if ( declineButton1ON==true ) {
@@ -133,7 +119,7 @@ void draw() {
     tint(red, 200);
     pressFImage= loadImage("../Images Used/bed.png");
     image(pressFImage, pressFImageX, pressFImageY, pressFImageWidth, pressFImageHeight);
-    acceptChoiceText1();
+    CancerT();
     }
   //
   if ( acceptButton1ON==true ) {

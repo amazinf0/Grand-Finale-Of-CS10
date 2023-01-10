@@ -11,16 +11,16 @@ String Delight = "Delightful!";
 float DelightX, DelightY, DelightW, DelightH;
 String Student = "Your Former Student Wants To Start A Business With You";
 float StudentX, StudentY, StudentW, StudentH;
-String acceptText1 = "Accept";
-float acceptTextX1, acceptTextY1, acceptTextWidth1, acceptTextHeight1;
-String declineText1 = "Decline";
-float declineTextX1, declineTextY1, declineTextWidth1, declineTextHeight1;
-String acceptChoiceText1 = "You Died 2 Years Later To Lung Cancer";
-float acceptChoiceTextX1, acceptChoiceTextY1, acceptChoiceTextWidth1, acceptChoiceTextHeight1;
+String AcceptT = "Accept";
+float AcceptTX, AcceptTY, AcceptTW, AcceptTH;
+String DeclineT = "Decline";
+float DeclineTX, DeclineTY, DeclineTW, DeclineTH;
+String CancerT = "You Died 2 Years Later To Lung Cancer";
+float CancerTX, CancerTY, CancerTW, CancerTH;
 String declineChoiceText1 = "You Went On To Make Millions And Died 42 Years Later";
-float declineChoiceTextX1, declineChoiceTextY1, declineChoiceTextWidth1, declineChoiceTextHeight1;
-String resetText = "Start/Restart";
-float resetTextX, resetTextY, resetTextWidth, resetTextHeight;
+float MoneyTX, MoneyTY, MoneyTW, MoneyTH;
+String BeginT = "Start/Restart";
+float BeginTX, BeginTY, BeginTW, BeginTH;
 String lottoText1 = "You Started A Meth Business";
 float lottoTextX1, lottoTextY1, lottoTextWidth1, lottoTextHeight1;
 String okText7 = "Hmm";
@@ -107,43 +107,43 @@ void Student() {
 //
 void Accept() {
   //Population
-  acceptTextX1 = HomeX;
-  acceptTextY1 = acceptButtonY1;
-  acceptTextWidth1 = acceptButtonWidth1/2;
-  acceptTextHeight1 = acceptButtonHeight1;
+  AcceptTX = HomeX;
+  AcceptTY = acceptButtonY1;
+  AcceptTW = acceptButtonWidth1/2;
+  AcceptTH = acceptButtonHeight1;
   choice1TextFontBold = createFont("TimesNewRomanPS-BoldMT", 601);
   //
   fill(resetWhite);
   textAlign(CENTER, CENTER);
   textFont(choice1TextFont1, NormalSize); 
-  text(acceptText1, acceptTextX1, acceptTextY1, acceptTextWidth1, acceptTextHeight1);}
+  text(AcceptT, AcceptTX, AcceptTY, AcceptTW, AcceptTH);}
   //End Accept
 //
-void declineText1() {
+void DeclineT() {
   //Population
-  declineTextX1 = DeclineX;
-  declineTextY1 = DeclineY;
-  declineTextWidth1 = DeclineW;
-  declineTextHeight1 = DeclineH;
+  DeclineTX = DeclineX;
+  DeclineTY = DeclineY;
+  DeclineTW = DeclineW;
+  DeclineTH = DeclineH;
   //
   fill(resetWhite);
   textAlign(CENTER, CENTER);
   textFont(choice1TextFont1, NormalSize); //CHANGE TO BOLD
-  text(declineText1, declineTextX1, declineTextY1, declineTextWidth1, declineTextHeight1);
-}//End declineText1
+  text(DeclineT, DeclineTX, DeclineTY, DeclineTW, DeclineTH);
+}//End DeclineT
 //
-void acceptChoiceText1() {
-  acceptChoiceTextX1 = HomeX5;
-  acceptChoiceTextY1 = HomeY5/1.2;
-  acceptChoiceTextWidth1 = HomeW/2;
-  acceptChoiceTextHeight1 = HomeH*3/5;
+void CancerT() {
+  CancerTX = HomeX5;
+  CancerTY = HomeY5/1.2;
+  CancerTW = HomeW/2;
+  CancerTH = HomeH*3/5;
   //
   fill(black);
   textAlign(CENTER, CENTER);
   textFont(choice1TextFont1, smallSize);
-  text(acceptChoiceText1, acceptChoiceTextX1, acceptChoiceTextY1, acceptChoiceTextWidth1, acceptChoiceTextHeight1);
+  text(CancerT, CancerTX, CancerTY, CancerTW, CancerTH);
   fill(resetWhite);
-}//End acceptChoiceText1()
+}//End CancerT()
   //
   /*fill(black);
   textAlign(CENTER, CENTER);
@@ -153,28 +153,28 @@ void acceptChoiceText1() {
 }//End ripText1
 //*/
 void declineChoiceText1() {
-  declineChoiceTextX1 = HomeX2;
-  declineChoiceTextY1 = HomeY2;
-  declineChoiceTextWidth1 = HomeW/2.6;
-  declineChoiceTextHeight1 = HomeH;
+  MoneyTX = HomeX2;
+  MoneyTY = HomeY2;
+  MoneyTW = HomeW/2.6;
+  MoneyTH = HomeH;
   //
   fill(blue);
   textAlign(CENTER, CENTER);
   textFont(choice1TextFont1, NormalSize);
-  text(declineChoiceText1, declineChoiceTextX1, declineChoiceTextY1, declineChoiceTextWidth1, declineChoiceTextHeight1);
+  text(declineChoiceText1, MoneyTX, MoneyTY, MoneyTW, MoneyTH);
   fill(resetWhite);
 }//End declineChoiceText1()
 //
-void resetText() {
+void BeginT() {
   //Population
-  resetTextX = ResetX;
-  resetTextY = ResetY;
-  resetTextWidth = ResetW;
-  resetTextHeight = ResetH;
+  BeginTX = ResetX;
+  BeginTY = ResetY;
+  BeginTW = ResetW;
+  BeginTH = ResetH;
   //
   textAlign(CENTER, CENTER);
   textFont(startTextFont1, bigSize);
-  text(resetText, resetTextX, resetTextY, resetTextWidth, resetTextHeight);
+  text(BeginT, BeginTX, BeginTY, BeginTW, BeginTH);
 }
 //
 void lottoText1() {
