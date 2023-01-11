@@ -6,7 +6,7 @@ float PathX1, PathY1, PathW1, PathH1;
 float OkX, OkY, OkW, OkH;
 float AcceptBX, AcceptBY, AcceptBW, AcceptBH;
 float DeclineX, DeclineY, DeclineW, DeclineH;
-float ResetX, ResetY, ResetW, ResetH;
+float StartX, StartY, StartW, StartH;
 float ThinkerX, ThinkerY, ThinkerW, ThinkerH;
 float YummerX, YummerY, YummerW, YummerH;
 //
@@ -56,10 +56,10 @@ void populationVariables() {
   DeclineW = HomeW/2;
   DeclineH = HomeH*1/6;
   //
-  ResetX = HomeX1;
-  ResetY = HomeY1;
-  ResetW = HomeW/2;
-  ResetH = HomeH*0.668;
+  StartX = HomeX1;
+  StartY = HomeY1;
+  StartW = HomeW/2;
+  StartH = HomeH*0.668;
   //
   ThinkerX = HomeX6;
   ThinkerY = HomeY6+HomeH*2/3;

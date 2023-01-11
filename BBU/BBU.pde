@@ -1,5 +1,6 @@
 //Global Variables
-color buttonFill, resetWhite=#FFFFFF, black=#000000, red=#FF0000, green=#00FF00, yellow=#FFFF00, brown=#643200, blue= #00FFFF, backgroundColor;
+//B=Button, T=Text, H=Height, W=Width
+color buttonFill, StartWhite=#FFFFFF, black=#000000, red=#FF0000, green=#00FF00, yellow=#FFFF00, brown=#643200, blue= #00FFFF, backgroundColor;
 Boolean startButton1ON=false, startButton2ON=false, okButton4ON=false, acceptButton1ON=false, declineButton1ON=false, okButton7ON=false, okButton8ON=false, okButton9ON=false;
 float quitX, quitY, QuitButtonW, QuitButtonH;
 //
@@ -38,25 +39,25 @@ void draw() {
   fill(buttonFill); //2-colors to start , remember nightMode adds choice
   rect(PathX1, PathY1, PathW1, PathH1);
   //
-  fill(resetWhite);
+  fill(StartWhite);
   //
-  startImage();
+  BBLogo();
   tint(255, 255);
-  startImage= loadImage("../Images Used/green.png"); 
-  image(startImage, startImageX, startImageY, startImageWidth, startImageHeight);
+  BBLogo= loadImage("../Images Used/green.png"); 
+  image(BBLogo, BBLogoX, BBLogoY, BBLogoW, BBLogoH);
   //
   Option1();
   Option2();
   //
   //Hover-over start button 2
-  if ( mouseX> ResetX && mouseX< ResetX+ResetW && mouseY> ResetY && mouseY< ResetY+ResetH ) {
+  if ( mouseX> StartX && mouseX< StartX+StartW && mouseY> StartY && mouseY< StartY+StartH ) {
     buttonFill = green;
   } else {
     buttonFill = red;
   }//End Hover-over
   fill(buttonFill);
-  rect(ResetX, ResetY, ResetW, ResetH);
-  fill(resetWhite);
+  rect(StartX, StartY, StartW, StartH);
+  fill(StartWhite);
   BeginT();
   //
   if ( mouseX> quitX && mouseX< quitX+QuitButtonW && mouseY> quitY && mouseY< quitY+QuitButtonH ) {
@@ -66,14 +67,14 @@ void draw() {
   }//End Hover-over
   fill(buttonFill);
   rect(quitX, quitY, QuitButtonW, QuitButtonH);
-  fill(resetWhite);
+  fill(StartWhite);
   quitText();
   //First Start Choice
   //
   if ( startButton1ON==true ) {
     fill(backgroundColor);
     rect( PathX1, PathY1, PathW1, PathH1 );
-    fill(resetWhite);
+    fill(StartWhite);
     //Hover-over OK BUTTON
     if ( mouseX> OkX && mouseX< OkX+OkW && mouseY> OkY && mouseY< OkY+OkH ) {
       buttonFill = green;
@@ -82,10 +83,10 @@ void draw() {
     }//End Hover-over OK BUTTON
     fill(buttonFill); //2-colors to start , remember nightMode adds choice
     rect(OkX, OkY, OkW, OkH);
-    oogwayImage();
+    Waltre();
     tint(255, 255);
-    oogwayImage= loadImage("../Images Used/waltre.jpeg");
-    image(oogwayImage, oogwayImageX, oogwayImageY, oogwayImageWidth, oogwayImageHeight);
+    Waltre= loadImage("../Images Used/waltre.jpeg");
+    image(Waltre, WaltreX, WaltreY, WaltreW, WaltreH);
     Delight();
     Teach();
   }//End START Button 1
@@ -93,16 +94,16 @@ void draw() {
   if ( okButton4ON==true ) {
     fill(backgroundColor);
     rect( PathX1, PathY1, PathW1, PathH1 );
-    fill(resetWhite);
+    fill(StartWhite);
     Student();
-    rabbitStandingImage();
+    Jesse();
     tint(255, 255);
-    rabbitStandingImage= loadImage("../Images Used/jesse.png");
-    image(rabbitStandingImage, rabbitStandingImageX, rabbitStandingImageY, rabbitStandingImageWidth, rabbitStandingImageHeight);
-    raceImage();
+    Jesse= loadImage("../Images Used/jesse.png");
+    image(Jesse, JesseX, JesseY, JesseW, JesseH);
+    Jessad();
     tint(255, 255);
-    raceImage= loadImage("../Images Used/jesad.jpeg");
-    image(raceImage, raceImageX, raceImageY, raceImageWidth, raceImageHeight);
+    Jessad= loadImage("../Images Used/jesad.jpeg");
+    image(Jessad, JessadX, JessadY, JessadW, JessadH);
     fill(green);
     rect(AcceptBX, AcceptBY, AcceptBW, AcceptBH);    
     fill(red);
@@ -114,11 +115,11 @@ void draw() {
   if ( declineButton1ON==true ) {
     fill(backgroundColor);
     rect( PathX1, PathY1, PathW1, PathH1 );
-    fill(resetWhite);
-    pressFImage();
+    fill(StartWhite);
+    dbed();
     tint(red, 200);
-    pressFImage= loadImage("../Images Used/bed.png");
-    image(pressFImage, pressFImageX, pressFImageY, pressFImageWidth, pressFImageHeight);
+    dbed= loadImage("../Images Used/bed.png");
+    image(dbed, dbedX, dbedY, dbedW, dbedH);
     CancerT();
     }
   //
@@ -126,12 +127,12 @@ void draw() {
     acceptButton1ON=false;
     fill(backgroundColor);
     rect( PathX1, PathY1, PathW1, PathH1 );
-    fill(resetWhite);
-    gravestoneImage();
+    fill(StartWhite);
+    Moolah();
     tint(255, 255);
-    gravestoneImage= loadImage("../Images Used/huell.gif");
-    image(gravestoneImage, gravestoneImageX, gravestoneImageY, gravestoneImageWidth, gravestoneImageHeight);
-    fill(resetWhite);
+    Moolah= loadImage("../Images Used/huell.gif");
+    image(Moolah, MoolahX, MoolahY, MoolahW, MoolahH);
+    fill(StartWhite);
     Money();
   }
   //
@@ -140,7 +141,7 @@ void draw() {
   if ( startButton2ON==true ) {
     fill(backgroundColor);
     rect( PathX, PathY, PathW, PathH );
-    fill(resetWhite);
+    fill(StartWhite);
     givemoneyImage();
     tint(255, 255);
     givemoneyImage= loadImage("../Images Used/crystals.jpeg");
@@ -152,7 +153,7 @@ void draw() {
     }
     fill(buttonFill);
     rect(ThinkerX, ThinkerY, ThinkerW, ThinkerH);
-    fill(resetWhite);
+    fill(StartWhite);
     Business();
     Thinking();
   }//End START Button 2
@@ -160,7 +161,7 @@ void draw() {
   if ( okButton7ON==true ) {
     fill(backgroundColor);
     rect( PathX, PathY, PathW, PathH );
-    fill(resetWhite);
+    fill(StartWhite);
     lotteryImage();
     tint(255, 255);
     lotteryImage= loadImage("../Images Used/chicken.png");
@@ -172,7 +173,7 @@ void draw() {
     }
     fill(buttonFill);
     rect(YummerX, YummerY, YummerW, YummerH);
-    fill(resetWhite);
+    fill(StartWhite);
     Chicken();
     okText8();
   }//End okButton7
@@ -180,7 +181,7 @@ void draw() {
   if ( okButton8ON==true ) {
     fill(backgroundColor);
     rect( PathX, PathY, PathW, PathH );
-    fill(resetWhite);
+    fill(StartWhite);
     robberImage();
     tint(255, 255);
     robberImage= loadImage("../Images Used/bars.png");
@@ -215,7 +216,7 @@ void mousePressed() {
   }
   if ( mouseX> ThinkerX && mouseX< ThinkerX+ThinkerW && mouseY> ThinkerY && mouseY< ThinkerY+ThinkerH ) okButton7ON=true;
   if ( mouseX> YummerX && mouseX< YummerX+YummerW && mouseY> YummerY && mouseY< YummerY+YummerH ) okButton8ON=true;
-  if ( mouseX> ResetX && mouseX< ResetX+ResetW && mouseY> ResetY && mouseY< ResetY+ResetH ) {
+  if ( mouseX> StartX && mouseX< StartX+StartW && mouseY> StartY && mouseY< StartY+StartH ) {
     fill(backgroundColor);
     rect(HomeX, HomeY, HomeW, HomeH);
     rect(HomeX1, HomeY1, HomeW, HomeH);
@@ -225,7 +226,7 @@ void mousePressed() {
     rect(HomeX6, HomeY6, HomeW, HomeH);
     rect(HomeX7, HomeY7, HomeW, HomeH);
     rect(HomeX8, HomeY8, HomeW, HomeH);
-    fill(resetWhite);
+    fill(StartWhite);
   }
 }//End mousePressed
 //

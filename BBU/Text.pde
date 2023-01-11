@@ -70,11 +70,11 @@ void Teach() {
   TeachH = HomeH/3;
   choice1TextFont1 = createFont("TimesNewRomanPSMT", 603);
   //
-  fill(resetWhite);
+  fill(StartWhite);
   textAlign(CENTER, CENTER);
   textFont(choice1TextFont1, NormalSize);
   text(Teach, TeachX, TeachY, TeachW, TeachH);
-  fill(resetWhite);
+  fill(StartWhite);
 }//End Teach
 //
 void Delight() {
@@ -88,7 +88,7 @@ void Delight() {
   textAlign(CENTER, CENTER);
   textFont(startTextFont1, NormalSize);
   text(Delight, DelightX, DelightY, DelightW, DelightH);
-  fill(resetWhite);
+  fill(StartWhite);
 }//End Teach
 //
 void Student() {
@@ -102,7 +102,7 @@ void Student() {
   textAlign(CENTER, CENTER);
   textFont(choice1TextFont1, NormalSize);
   text(Student, StudentX, StudentY, StudentW, StudentH);
-  fill(resetWhite);
+  fill(StartWhite);
 }//End Student
 //
 void Accept() {
@@ -113,7 +113,7 @@ void Accept() {
   AcceptTH = AcceptBH;
   choice1TextFontBold = createFont("TimesNewRomanPS-BoldMT", 601);
   //
-  fill(resetWhite);
+  fill(StartWhite);
   textAlign(CENTER, CENTER);
   textFont(choice1TextFont1, NormalSize); 
   text(AcceptT, AcceptTX, AcceptTY, AcceptTW, AcceptTH);}
@@ -126,7 +126,7 @@ void DeclineT() {
   DeclineTW = DeclineW;
   DeclineTH = DeclineH;
   //
-  fill(resetWhite);
+  fill(StartWhite);
   textAlign(CENTER, CENTER);
   textFont(choice1TextFont1, NormalSize); //CHANGE TO BOLD
   text(DeclineT, DeclineTX, DeclineTY, DeclineTW, DeclineTH);
@@ -142,14 +142,14 @@ void CancerT() {
   textAlign(CENTER, CENTER);
   textFont(choice1TextFont1, smallSize);
   text(CancerT, CancerTX, CancerTY, CancerTW, CancerTH);
-  fill(resetWhite);
+  fill(StartWhite);
 }//End CancerT()
   //
   /*fill(black);
   textAlign(CENTER, CENTER);
   textFont(startTextFont1, NormalSize);
   text(ripText1, ripTextX1, ripTextY1, ripTextWidth1, ripTextHeight1);
-  fill(resetWhite);
+  fill(StartWhite);
 }//End ripText1
 //*/
 void Money() {
@@ -162,15 +162,15 @@ void Money() {
   textAlign(CENTER, CENTER);
   textFont(choice1TextFont1, NormalSize);
   text(Money, MoneyTX, MoneyTY, MoneyTW, MoneyTH);
-  fill(resetWhite);
+  fill(StartWhite);
 }//End Money()
 //
 void BeginT() {
   //Population
-  BeginTX = ResetX;
-  BeginTY = ResetY;
-  BeginTW = ResetW;
-  BeginTH = ResetH;
+  BeginTX = StartX;
+  BeginTY = StartY;
+  BeginTW = StartW;
+  BeginTH = StartH;
   //
   textAlign(CENTER, CENTER);
   textFont(startTextFont1, bigSize);
@@ -188,7 +188,7 @@ void Business() {
   textFont(startTextFont1, NormalSize);
   fill(red);
   text(Business, BusinessX, BusinessY, BusinessW, BusinessH);
-  fill(resetWhite);
+  fill(StartWhite);
 }
 //
 void Thinking() {
@@ -202,7 +202,7 @@ void Thinking() {
   textAlign(CENTER, CENTER);
   textFont(startTextFont1, bigSize);
   text(Thinking, ThinkingX, ThinkingY, ThinkingW, ThinkingH);
-  fill(resetWhite);
+  fill(StartWhite);
 }
 //
 void Chicken() {
@@ -230,7 +230,7 @@ void okText8() {
   textAlign(CENTER, CENTER);
   textFont(startTextFont1, bigSize);
   text(okText8, YummyX, YummyY, YummyW, YummyH);
-  fill(resetWhite);
+  fill(StartWhite);
 }
 //
 void Jail() {
@@ -244,14 +244,14 @@ void Jail() {
   textFont(startTextFont1, NormalSize);
   fill(red);
   text(Jail, JailX, JailY, JailW, JailH);
-  fill(resetWhite);}
+  fill(StartWhite);}
   //
  void quitText() {
   //Population
-  QuitTX = ResetX*1.5;
-  QuitTY = ResetY;
-  QuitTW = ResetW;
-  QuitTH = ResetH;
+  QuitTX = StartX*1.5;
+  QuitTY = StartY;
+  QuitTW = StartW;
+  QuitTH = StartH;
   //
   textAlign(CENTER, CENTER);
   textFont(startTextFont1, bigSize);

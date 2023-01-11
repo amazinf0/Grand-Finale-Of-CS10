@@ -1,16 +1,16 @@
 //Global Variables
-PImage startImage;
-float startImageX, startImageY, startImageWidth, startImageHeight;
-PImage oogwayImage;
-float oogwayImageX, oogwayImageY, oogwayImageWidth, oogwayImageHeight;
-PImage rabbitStandingImage;
-float rabbitStandingImageX, rabbitStandingImageY, rabbitStandingImageWidth, rabbitStandingImageHeight;
-PImage raceImage; //10687379345_555c9954a1_b.jpeg
-float raceImageX, raceImageY, raceImageWidth, raceImageHeight;
-PImage pressFImage;
-float pressFImageX, pressFImageY, pressFImageWidth, pressFImageHeight;
-PImage gravestoneImage;
-float gravestoneImageX, gravestoneImageY, gravestoneImageWidth, gravestoneImageHeight;
+PImage BBLogo;
+float BBLogoX, BBLogoY, BBLogoW, BBLogoH;
+PImage Waltre;
+float WaltreX, WaltreY, WaltreW, WaltreH;
+PImage Jesse;
+float JesseX, JesseY, JesseW, JesseH;
+PImage Jessad; 
+float JessadX, JessadY, JessadW, JessadH;
+PImage dbed;
+float dbedX, dbedY, dbedW, dbedH;
+PImage Moolah;
+float MoolahX, MoolahY, MoolahW, MoolahH;
 PImage givemoneyImage;
 float givemoneyImageX, givemoneyImageY, givemoneyImageWidth, givemoneyImageHeight;
 PImage lotteryImage;
@@ -18,46 +18,46 @@ float lotteryImageX, lotteryImageY, lotteryImageWidth, lotteryImageHeight;
 PImage robberImage;
 float robberImageX, robberImageY, robberImageWidth, robberImageHeight;
 //
-void startImage() {
-  startImageX = HomeX4;
-  startImageY = HomeY4;
-  startImageWidth = HomeW; //CANVAS (0,0) means point doesn't match to rectangle, missing outline on 2 sides
-  startImageHeight = HomeH;
-}//End startImage
+void BBLogo() {
+  BBLogoX = HomeX4;
+  BBLogoY = HomeY4;
+  BBLogoW = HomeW; 
+  BBLogoH = HomeH;
+}//End BBLogo
 //
-void oogwayImage() {
-  oogwayImageX = TeachX;
-  oogwayImageY = TeachY;
-  oogwayImageWidth = TeachW;
-  oogwayImageHeight = HomeH/1.2;
+void Waltre() {
+  WaltreX = TeachX;
+  WaltreY = TeachY;
+  WaltreW = TeachW;
+  WaltreH = HomeH/1.2;
 }
 //
-void rabbitStandingImage() {
-  rabbitStandingImageX = HomeX;
-  rabbitStandingImageY = HomeY+HomeH*1/3;
-  rabbitStandingImageWidth = HomeW*1/2;
-  rabbitStandingImageHeight = HomeH*11/20;
+void Jesse() {
+  JesseX = HomeX;
+  JesseY = HomeY+HomeH*1/3;
+  JesseW = HomeW*1/2;
+  JesseH = HomeH*11/20;
 }
 //
-void raceImage() {
-  raceImageX = rabbitStandingImageWidth;
-  raceImageY = rabbitStandingImageY;
-  raceImageWidth = rabbitStandingImageWidth;
-  raceImageHeight = rabbitStandingImageHeight*1.02;
+void Jessad() {
+  JessadX = JesseW;
+  JessadY = JesseY;
+  JessadW = JesseW;
+  JessadH = JesseH*1.02;
 }
 //
-void pressFImage() {
-  pressFImageX = HomeX2*10/10;
-  pressFImageY = HomeY3;
-  pressFImageWidth = HomeW;
-  pressFImageHeight = HomeH;
+void dbed() {
+  dbedX = HomeX2*10/10;
+  dbedY = HomeY3;
+  dbedW = HomeW;
+  dbedH = HomeH;
 }
 //
-void gravestoneImage() {
-  gravestoneImageX = HomeX2;
-  gravestoneImageY = HomeY2;
-  gravestoneImageWidth = HomeW;
-  gravestoneImageHeight = HomeH;
+void Moolah() {
+  MoolahX = HomeX2;
+  MoolahY = HomeY2;
+  MoolahW = HomeW;
+  MoolahH = HomeH;
 }
 //
 void givemoneyImage() {
