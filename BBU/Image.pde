@@ -30,28 +30,28 @@ void oogwayImage() {
   oogwayImageY = TeachY;
   oogwayImageWidth = TeachW;
   oogwayImageHeight = HomeH/1.2;
-}//End oogwayImage
+}
 //
 void rabbitStandingImage() {
   rabbitStandingImageX = HomeX;
   rabbitStandingImageY = HomeY+HomeH*1/3;
   rabbitStandingImageWidth = HomeW*1/2;
   rabbitStandingImageHeight = HomeH*11/20;
-}//End rabbitStandingImage
+}
 //
 void raceImage() {
   raceImageX = rabbitStandingImageWidth;
   raceImageY = rabbitStandingImageY;
   raceImageWidth = rabbitStandingImageWidth;
   raceImageHeight = rabbitStandingImageHeight*1.02;
-}//End raceImage
+}
 //
 void pressFImage() {
   pressFImageX = HomeX2*10/10;
   pressFImageY = HomeY3;
   pressFImageWidth = HomeW;
   pressFImageHeight = HomeH;
-}//End rabbitTurtleImage
+}
 //
 void gravestoneImage() {
   gravestoneImageX = HomeX2;
