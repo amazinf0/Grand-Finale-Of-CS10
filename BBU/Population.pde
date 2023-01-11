@@ -11,46 +11,55 @@ float ThinkerX, ThinkerY, ThinkerW, ThinkerH;
 float YummerX, YummerY, YummerW, YummerH;
 //
 void populationVariables() {
-  //rect9
   HomeW = width*1/3;
   HomeH = height*1/3;
   HomeX = width*0;
   HomeY = height*0;
+  //
   HomeX1 = HomeW;
   HomeY1 = HomeY;
+  //
   HomeX2 = HomeW*2;
   HomeY2 = HomeY;
+  //
   HomeX3 = HomeX;
   HomeY3 = HomeH;
+  //
   HomeX4 = HomeX1;
   HomeY4 = HomeH;
+  //
   HomeX5 = HomeX2;
   HomeY5 = HomeH;
+  //
   HomeX6 = HomeX;
   HomeY6 = HomeH*2;
+  //
   HomeX7 = HomeX1;
   HomeY7 = HomeY6;
+  //
   HomeX8 = HomeX2;
   HomeY8 = HomeY6;
   //
   PathX = HomeX4;
   PathY = HomeY4*0.67;
   PathW = width*1/6;
-  PathH = height*1/9;
+  PathH = height*0.98/9;
+  //
   PathX1 = PathX + width*1/6;
   PathY1 = PathY;
   PathW1 = PathW;
   PathH1 = PathH;
-  //4th rect ok button
+  //
   OkX = HomeX3;
   OkY = HomeY3+HomeH*5/6;
   OkW = HomeW;
   OkH = HomeH*1/6;
-  //1st rect accept/decline
+  //
   AcceptBX = HomeX;
   AcceptBY = HomeY+HomeH*5/6;
   AcceptBW = HomeW;
   AcceptBH = HomeH*1/6;
+  //
   DeclineX = HomeX+HomeW*1/2;
   DeclineY = HomeY+HomeH*5/6;
   DeclineW = HomeW/2;
@@ -76,3 +85,4 @@ void populationVariables() {
   QuitButtonW = HomeW/2;
   QuitButtonH = HomeH*0.668;
 }
+//End Population

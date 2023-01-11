@@ -1,6 +1,6 @@
 //Global Variables
 int NormalSize = 25, smallSize = 20, bigSize = 35;
-PFont startTextFont1, choice1TextFont1, choice1TextFontBold, impactTextFont, lottoTextFont2;
+PFont Font, Font1, Bold, Font2, Font3;
 String Option1 = "Walter";
 float Option1X, Option1Y, Option1W, Option1H;
 String Option2 = "Gustavo";
@@ -41,14 +41,12 @@ void Option1() {
   Option1Y = PathY;
   Option1W = PathW;
   Option1H = PathH;
-  startTextFont1 = createFont("TimesNewRomanPS-BoldItalicMT", 600);
+  Font = createFont("TimesNewRomanPS-BoldItalicMT", 600);
   //
-  //String[] fontList = PFont.list(); //To list all fonts available on OS
-  //printArray(fontList); //For Listing all possible fonts to choose from, then createFont
   textAlign(CENTER, CENTER);
-  textFont(startTextFont1, NormalSize);
+  textFont(Font, NormalSize);
   text(Option1, Option1X, Option1Y, Option1W, Option1H);
-}//End Option1
+}
 //
 void Option2() {
   //Population
@@ -58,9 +56,9 @@ void Option2() {
   Option2H = PathH1;
   //
   textAlign(CENTER, CENTER);
-  textFont(startTextFont1, NormalSize);
+  textFont(Font, NormalSize);
   text(Option2, Option2X, Option2Y, Option2W, Option2H);
-}//End Option2
+}
 //
 void Teach() {
   //Population
@@ -68,14 +66,14 @@ void Teach() {
   TeachY = HomeY3;
   TeachW = HomeW;
   TeachH = HomeH/3;
-  choice1TextFont1 = createFont("TimesNewRomanPSMT", 603);
+  Font1 = createFont("TimesNewRomanPSMT", 603);
   //
-  fill(StartWhite);
+  fill(White);
   textAlign(CENTER, CENTER);
-  textFont(choice1TextFont1, NormalSize);
+  textFont(Font1, NormalSize);
   text(Teach, TeachX, TeachY, TeachW, TeachH);
-  fill(StartWhite);
-}//End Teach
+  fill(White);
+}
 //
 void Delight() {
   //Population
@@ -86,10 +84,10 @@ void Delight() {
   //
   fill(black);
   textAlign(CENTER, CENTER);
-  textFont(startTextFont1, NormalSize);
+  textFont(Font, NormalSize);
   text(Delight, DelightX, DelightY, DelightW, DelightH);
-  fill(StartWhite);
-}//End Teach
+  fill(White);
+}
 //
 void Student() {
   //Population
@@ -100,10 +98,10 @@ void Student() {
   //
   fill(black);
   textAlign(CENTER, CENTER);
-  textFont(choice1TextFont1, NormalSize);
+  textFont(Font1, NormalSize);
   text(Student, StudentX, StudentY, StudentW, StudentH);
-  fill(StartWhite);
-}//End Student
+  fill(White);
+}
 //
 void Accept() {
   //Population
@@ -111,13 +109,13 @@ void Accept() {
   AcceptTY = AcceptBY;
   AcceptTW = AcceptBW/2;
   AcceptTH = AcceptBH;
-  choice1TextFontBold = createFont("TimesNewRomanPS-BoldMT", 601);
+  Bold = createFont("TimesNewRomanPS-BoldMT", 601);
   //
-  fill(StartWhite);
+  fill(White);
   textAlign(CENTER, CENTER);
-  textFont(choice1TextFont1, NormalSize); 
-  text(AcceptT, AcceptTX, AcceptTY, AcceptTW, AcceptTH);}
-  //End Accept
+  textFont(Font1, NormalSize); 
+  text(AcceptT, AcceptTX, AcceptTY, AcceptTW, AcceptTH);
+}
 //
 void DeclineT() {
   //Population
@@ -126,11 +124,11 @@ void DeclineT() {
   DeclineTW = DeclineW;
   DeclineTH = DeclineH;
   //
-  fill(StartWhite);
+  fill(White);
   textAlign(CENTER, CENTER);
-  textFont(choice1TextFont1, NormalSize); //CHANGE TO BOLD
+  textFont(Font1, NormalSize); //CHANGE TO BOLD
   text(DeclineT, DeclineTX, DeclineTY, DeclineTW, DeclineTH);
-}//End DeclineT
+}
 //
 void CancerT() {
   CancerTX = HomeX5;
@@ -140,19 +138,12 @@ void CancerT() {
   //
   fill(black);
   textAlign(CENTER, CENTER);
-  textFont(choice1TextFont1, smallSize);
+  textFont(Font1, smallSize);
   text(CancerT, CancerTX, CancerTY, CancerTW, CancerTH);
-  fill(StartWhite);
-}//End CancerT()
-  //
-  /*fill(black);
-  textAlign(CENTER, CENTER);
-  textFont(startTextFont1, NormalSize);
-  text(ripText1, ripTextX1, ripTextY1, ripTextWidth1, ripTextHeight1);
-  fill(StartWhite);
-}//End ripText1
-//*/
-void Money() {
+  fill(White);
+}
+//
+  void Money() {
   MoneyTX = HomeX2;
   MoneyTY = HomeY2;
   MoneyTW = HomeW/2.6;
@@ -160,9 +151,9 @@ void Money() {
   //
   fill(blue);
   textAlign(CENTER, CENTER);
-  textFont(choice1TextFont1, NormalSize);
+  textFont(Font1, NormalSize);
   text(Money, MoneyTX, MoneyTY, MoneyTW, MoneyTH);
-  fill(StartWhite);
+  fill(White);
 }//End Money()
 //
 void BeginT() {
@@ -173,7 +164,7 @@ void BeginT() {
   BeginTH = StartH;
   //
   textAlign(CENTER, CENTER);
-  textFont(startTextFont1, bigSize);
+  textFont(Font, bigSize);
   text(BeginT, BeginTX, BeginTY, BeginTW, BeginTH);
 }
 //
@@ -185,10 +176,10 @@ void Business() {
   BusinessH = HomeH;
   //
   textAlign(CENTER, TOP);
-  textFont(startTextFont1, NormalSize);
+  textFont(Font, NormalSize);
   fill(red);
   text(Business, BusinessX, BusinessY, BusinessW, BusinessH);
-  fill(StartWhite);
+  fill(White);
 }
 //
 void Thinking() {
@@ -200,9 +191,9 @@ void Thinking() {
   //
   fill(black);
   textAlign(CENTER, CENTER);
-  textFont(startTextFont1, bigSize);
+  textFont(Font, bigSize);
   text(Thinking, ThinkingX, ThinkingY, ThinkingW, ThinkingH);
-  fill(StartWhite);
+  fill(White);
 }
 //
 void Chicken() {
@@ -211,10 +202,10 @@ void Chicken() {
   ChickenY = HomeY7/1.25; 
   ChickenW = HomeW;
   ChickenH = HomeH;
-  lottoTextFont2= createFont("Impact", 281);
+  Font3= createFont("Impact", 281);
   //
   textAlign(CENTER, CENTER);
-  textFont(lottoTextFont2, smallSize);
+  textFont(Font3, smallSize);
   fill(red);
   text(Chicken, ChickenX, ChickenY, ChickenW, ChickenH);
 }
@@ -228,9 +219,9 @@ void okText8() {
   //
   fill(black);
   textAlign(CENTER, CENTER);
-  textFont(startTextFont1, bigSize);
+  textFont(Font, bigSize);
   text(okText8, YummyX, YummyY, YummyW, YummyH);
-  fill(StartWhite);
+  fill(White);
 }
 //
 void Jail() {
@@ -241,10 +232,10 @@ void Jail() {
   JailH = HomeH;
   //
   textAlign(CENTER, TOP);
-  textFont(startTextFont1, NormalSize);
+  textFont(Font, NormalSize);
   fill(red);
   text(Jail, JailX, JailY, JailW, JailH);
-  fill(StartWhite);}
+  fill(White);}
   //
  void quitText() {
   //Population
@@ -254,6 +245,7 @@ void Jail() {
   QuitTH = StartH;
   //
   textAlign(CENTER, CENTER);
-  textFont(startTextFont1, bigSize);
+  textFont(Font, bigSize);
   text(quitText, QuitTX, QuitTY, QuitTW, QuitTH);
 }
+//End Text

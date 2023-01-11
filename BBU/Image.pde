@@ -17,13 +17,14 @@ PImage Laundry;
 float LaundryX, LaundryY, LaundryW, LaundryH;
 PImage Prison;
 float PrisonX, PrisonY, PrisonW, PrisonH;
+PImage Cursor;
 //
 void BBLogo() {
   BBLogoX = HomeX4;
   BBLogoY = HomeY4;
   BBLogoW = HomeW; 
   BBLogoH = HomeH;
-}//End BBLogo
+}
 //
 void Waltre() {
   WaltreX = TeachX;
@@ -80,3 +81,4 @@ void Prison() {
   PrisonW = HomeW;
   PrisonH = HomeH;
 }
+//End Image
