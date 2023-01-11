@@ -11,12 +11,12 @@ PImage dbed;
 float dbedX, dbedY, dbedW, dbedH;
 PImage Moolah;
 float MoolahX, MoolahY, MoolahW, MoolahH;
-PImage givemoneyImage;
-float givemoneyImageX, givemoneyImageY, givemoneyImageWidth, givemoneyImageHeight;
-PImage lotteryImage;
-float lotteryImageX, lotteryImageY, lotteryImageWidth, lotteryImageHeight;
-PImage robberImage;
-float robberImageX, robberImageY, robberImageWidth, robberImageHeight;
+PImage SkyBlue;
+float SkyBlueX, SkyBlueY, SkyBlueW, SkyBlueH;
+PImage Laundry;
+float LaundryX, LaundryY, LaundryW, LaundryH;
+PImage Prison;
+float PrisonX, PrisonY, PrisonW, PrisonH;
 //
 void BBLogo() {
   BBLogoX = HomeX4;
@@ -60,23 +60,23 @@ void Moolah() {
   MoolahH = HomeH;
 }
 //
-void givemoneyImage() {
-  givemoneyImageX = HomeX6;
-  givemoneyImageY = HomeY6;
-  givemoneyImageWidth = HomeW;
-  givemoneyImageHeight = HomeH;
+void SkyBlue() {
+  SkyBlueX = HomeX6;
+  SkyBlueY = HomeY6;
+  SkyBlueW = HomeW;
+  SkyBlueH = HomeH;
 }
 //
-void lotteryImage() {
-  lotteryImageX = HomeX7;
-  lotteryImageY = HomeY7;
-  lotteryImageWidth = HomeW;
-  lotteryImageHeight = HomeH;
+void Laundry() {
+  LaundryX = HomeX7;
+  LaundryY = HomeY7;
+  LaundryW = HomeW;
+  LaundryH = HomeH;
 }
 //
-void robberImage() {
-  robberImageX = HomeX8;
-  robberImageY = HomeY8;
-  robberImageWidth = HomeW;
-  robberImageHeight = HomeH;
+void Prison() {
+  PrisonX = HomeX8;
+  PrisonY = HomeY8;
+  PrisonW = HomeW;
+  PrisonH = HomeH;
 }

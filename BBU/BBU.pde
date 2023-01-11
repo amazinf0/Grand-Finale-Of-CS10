@@ -43,6 +43,7 @@ void draw() {
   //
   BBLogo();
   tint(255, 255);
+  
   BBLogo= loadImage("../Images Used/green.png"); 
   image(BBLogo, BBLogoX, BBLogoY, BBLogoW, BBLogoH);
   //
@@ -142,10 +143,10 @@ void draw() {
     fill(backgroundColor);
     rect( PathX, PathY, PathW, PathH );
     fill(StartWhite);
-    givemoneyImage();
+    SkyBlue();
     tint(255, 255);
-    givemoneyImage= loadImage("../Images Used/crystals.jpeg");
-    image(givemoneyImage, givemoneyImageX, givemoneyImageY, givemoneyImageWidth, givemoneyImageHeight);
+    SkyBlue= loadImage("../Images Used/crystals.jpeg");
+    image(SkyBlue, SkyBlueX, SkyBlueY, SkyBlueW, SkyBlueH);
     if ( mouseX> ThinkerX && mouseX< ThinkerX+ThinkerW && mouseY> ThinkerY && mouseY< ThinkerY+ThinkerH ) {
       buttonFill = green;
     } else {
@@ -162,10 +163,10 @@ void draw() {
     fill(backgroundColor);
     rect( PathX, PathY, PathW, PathH );
     fill(StartWhite);
-    lotteryImage();
+    Laundry();
     tint(255, 255);
-    lotteryImage= loadImage("../Images Used/chicken.png");
-    image(lotteryImage, lotteryImageX, lotteryImageY, lotteryImageWidth, lotteryImageHeight);
+    Laundry= loadImage("../Images Used/chicken.png");
+    image(Laundry, LaundryX, LaundryY, LaundryW, LaundryH);
     if ( mouseX> YummerX && mouseX< YummerX+YummerW && mouseY> YummerY && mouseY< YummerY+YummerH ) {
       buttonFill = green;
     } else {
@@ -182,10 +183,10 @@ void draw() {
     fill(backgroundColor);
     rect( PathX, PathY, PathW, PathH );
     fill(StartWhite);
-    robberImage();
+    Prison();
     tint(255, 255);
-    robberImage= loadImage("../Images Used/bars.png");
-    image(robberImage, robberImageX, robberImageY, robberImageWidth, robberImageHeight);
+    Prison= loadImage("../Images Used/bars.png");
+    image(Prison, PrisonX, PrisonY, PrisonW, PrisonH);
     Jail();
   }
 }//End draw
