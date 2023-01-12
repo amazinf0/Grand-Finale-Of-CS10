@@ -45,7 +45,7 @@ void draw() {
   } else {
     buttonFill = red;
   }//End Hover-over
-  fill(buttonFill); //2-colors to start , remember nightMode adds choice
+  fill(buttonFill); 
   rect(PathX1, PathY1, PathW1, PathH1);
   //
   fill(White);
@@ -91,7 +91,7 @@ void draw() {
     } else {
       buttonFill = yellow;
     }//End Hover-over OK BUTTON
-    fill(buttonFill); //2-colors to start , remember nightMode adds choice
+    fill(buttonFill); 
     rect(OkX, OkY, OkW, OkH);
     Waltre();
     tint(255, 255);
