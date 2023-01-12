@@ -1,4 +1,12 @@
 //Global Variables
+//background music
+//play/pause
+//sound effects
+//stop
+//fast forward
+//fast rewing
+//mute
+//loop
 //B=Button, T=Text, H=Height, W=Width
 color green=#00FF00,buttonFill, White=#FFFFFF, blue= #00FFFF, backgroundColor, black=#000000, red=#FF0000, yellow=#FFFF00, brown=#643200;
 Boolean startButton1ON=false, startButton2ON=false, okButton4ON=false, acceptButton1ON=false, declineButton1ON=false, okButton7ON=false, okButton8ON=false, okButton9ON=false, OS_on=false;
