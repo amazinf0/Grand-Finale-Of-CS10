@@ -1,6 +1,8 @@
 //Global Variables
 int NormalSize = 25, smallSize = 20, bigSize = 35;
 PFont Font, Font1, Bold, Font2, Font3;
+String BeginT = "Start/Restart";
+float BeginTX, BeginTY, BeginTW, BeginTH;
 String Option1 = "Walter";
 float Option1X, Option1Y, Option1W, Option1H;
 String Option2 = "Gustavo";
@@ -19,20 +21,18 @@ String CancerT = "You Died 2 Years Later To Lung Cancer";
 float CancerTX, CancerTY, CancerTW, CancerTH;
 String Money = "You Went On To Make Millions And Died 42 Years Later";
 float MoneyTX, MoneyTY, MoneyTW, MoneyTH;
-String BeginT = "Start/Restart";
-float BeginTX, BeginTY, BeginTW, BeginTH;
 String Business = "You Started A Meth Business";
 float BusinessX, BusinessY, BusinessW, BusinessH;
 String Thinking = "Hmm";
 float ThinkingX, ThinkingY, ThinkingW, ThinkingH;
 String Chicken = "You Started A Chicken Business To Launder The Money";
 float ChickenX, ChickenY, ChickenW, ChickenH;
-String okText8 = "Yum";
+String Yummeries = "Yum";
 float YummyX, YummyY, YummyW, YummyH;
 String Jail = "You Got Caught And Went To Jail For Life";
 float JailX, JailY, JailW, JailH;
-float QuitTX, QuitTY, QuitTW, QuitTH;
 String quitText = "Exit (E)";
+float QuitTX, QuitTY, QuitTW, QuitTH;
 PFont QuitF;
 //
 void Option1() {
@@ -210,7 +210,7 @@ void Chicken() {
   text(Chicken, ChickenX, ChickenY, ChickenW, ChickenH);
 }
 //
-void okText8() {
+void Yummeries() {
   //Population
   YummyX = YummerX;
   YummyY = YummerY;
@@ -220,7 +220,7 @@ void okText8() {
   fill(black);
   textAlign(CENTER, CENTER);
   textFont(Font, bigSize);
-  text(okText8, YummyX, YummyY, YummyW, YummyH);
+  text(Yummeries, YummyX, YummyY, YummyW, YummyH);
   fill(White);
 }
 //

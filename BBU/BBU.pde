@@ -9,22 +9,13 @@
 //loop
 //B=Button, T=Text, H=Height, W=Width
 color green=#00FF00,buttonFill, White=#FFFFFF, blue= #00FFFF, backgroundColor, black=#000000, red=#FF0000, yellow=#FFFF00, brown=#643200;
-Boolean startButton1ON=false, startButton2ON=false, okButton4ON=false, acceptButton1ON=false, declineButton1ON=false, okButton7ON=false, okButton8ON=false, okButton9ON=false, OS_on=false;
+Boolean StartBON=false, StartBON1=false, OkBON=false, AcceptBON=false, DeclineBON=false, OkBON1=false, OkBON2=false, OkBON3=false, OS_on=false;
 float quitX, quitY, QuitButtonW, QuitButtonH;
 //
 void setup() {
   size(1200, 700);
   display();
   populationVariables();
-  rect(HomeX, HomeY, HomeW, HomeH);
-  rect(HomeX1, HomeY1, HomeW, HomeH);
-  rect(HomeX2, HomeY2, HomeW, HomeH);
-  rect(HomeX3, HomeY3, HomeW, HomeH);
-  rect(HomeX4, HomeY4, HomeW, HomeH);
-  rect(HomeX5, HomeY5, HomeW, HomeH);
-  rect(HomeX6, HomeY6, HomeW, HomeH);
-  rect(HomeX7, HomeY7, HomeW, HomeH);
-  rect(HomeX8, HomeY8, HomeW, HomeH);
   nightMode();
   background(backgroundColor);
 }//End setup
@@ -81,7 +72,7 @@ void draw() {
   quitText();
   //First Start Choice
   //
-  if ( startButton1ON==true ) {
+  if ( StartBON==true ) {
     fill(backgroundColor);
     rect( PathX1, PathY1, PathW1, PathH1 );
     fill(White);
@@ -102,7 +93,7 @@ void draw() {
     Teach();
   }//End START Button 1
   //
-  if ( okButton4ON==true ) {
+  if ( OkBON==true ) {
     fill(backgroundColor);
     rect( PathX1, PathY1, PathW1, PathH1 );
     fill(White);
@@ -123,9 +114,9 @@ void draw() {
     rect(DeclineX, DeclineY, DeclineW, DeclineH);
     Accept();
     DeclineT();
-  }//End okButton 4th rect
+  }//End Button 4th Rect
   //
-  if ( declineButton1ON==true ) {
+  if ( DeclineBON==true ) {
     fill(backgroundColor);
     rect( PathX1, PathY1, PathW1, PathH1 );
     fill(White);
@@ -137,7 +128,7 @@ void draw() {
     CancerT();
     }
   //
-  if ( acceptButton1ON==true ) {
+  if ( AcceptBON==true ) {
     fill(backgroundColor);
     rect( PathX1, PathY1, PathW1, PathH1 );
     fill(White);
@@ -149,10 +140,8 @@ void draw() {
     fill(White);
     Money();
   }
-  //
   //Second Start Choice
-  //
-  if ( startButton2ON==true ) {
+  if ( StartBON1==true ) {
     fill(backgroundColor);
     rect( PathX, PathY, PathW, PathH );
     fill(White);
@@ -171,9 +160,9 @@ void draw() {
     fill(White);
     Business();
     Thinking();
-  }//End START Button 2
+  }//End Start Button 2
   //
-  if ( okButton7ON==true ) {
+  if ( OkBON1==true ) {
     fill(backgroundColor);
     rect( PathX, PathY, PathW, PathH );
     fill(White);
@@ -191,10 +180,10 @@ void draw() {
     rect(YummerX, YummerY, YummerW, YummerH);
     fill(White);
     Chicken();
-    okText8();
+    Yummeries();
   }//End okButton7
   //
-  if ( okButton8ON==true ) {
+  if ( OkBON2==true ) {
     fill(backgroundColor);
     rect( PathX, PathY, PathW, PathH );
     fill(White);
@@ -213,37 +202,30 @@ void keyPressed() {
 //
 void mousePressed() {
 if ( OS_on==false ) OS_on=true;
-  startButton1ON=false;
-  startButton2ON=false;
-  okButton4ON=false;
-  acceptButton1ON=false;
-  declineButton1ON=false;
-  okButton7ON=false;
-  okButton8ON=false;
+  StartBON=false;
+  StartBON1=false;
+  OkBON=false;
+  AcceptBON=false;
+  DeclineBON=false;
+  OkBON1=false;
+  OkBON2=false;
   if (mouseX> quitX && mouseX< quitX+QuitButtonW && mouseY> quitY && mouseY< quitY+QuitButtonH) exit();
-  if ( mouseX>=PathX && mouseX<=PathX+PathW && mouseY>=PathY && mouseY<=PathY+PathH ) startButton1ON=true;
-  if ( mouseX>=PathX1 && mouseX<=PathX1+PathW1 && mouseY>=PathY1 && mouseY<=PathY+PathH1 ) startButton2ON=true;
-  if ( mouseX>=OkX && mouseX<=OkX+OkW && mouseY>=OkY && mouseY<=OkY+OkH ) okButton4ON=true;
+  if ( mouseX>=PathX && mouseX<=PathX+PathW && mouseY>=PathY && mouseY<=PathY+PathH ) StartBON=true;
+  if ( mouseX>=PathX1 && mouseX<=PathX1+PathW1 && mouseY>=PathY1 && mouseY<=PathY+PathH1 ) StartBON1=true;
+  if ( mouseX>=OkX && mouseX<=OkX+OkW && mouseY>=OkY && mouseY<=OkY+OkH ) OkBON=true;
   if ( mouseX>=AcceptBX && mouseX<=AcceptBX+AcceptBW && mouseY>=AcceptBY && mouseY<=AcceptBY+AcceptBH ) {    
-    acceptButton1ON=true;
-    declineButton1ON=false;
+    AcceptBON=true;
+    DeclineBON=false;
   }
   if ( mouseX>=DeclineX && mouseX<=DeclineX+DeclineW && mouseY>=DeclineY && mouseY<=DeclineY+DeclineH ) {
-    declineButton1ON=true;
-    acceptButton1ON=false;
+    DeclineBON=true;
+    AcceptBON=false;
   }
-  if ( mouseX> ThinkerX && mouseX< ThinkerX+ThinkerW && mouseY> ThinkerY && mouseY< ThinkerY+ThinkerH ) okButton7ON=true;
-  if ( mouseX> YummerX && mouseX< YummerX+YummerW && mouseY> YummerY && mouseY< YummerY+YummerH ) okButton8ON=true;
+  if ( mouseX> ThinkerX && mouseX< ThinkerX+ThinkerW && mouseY> ThinkerY && mouseY< ThinkerY+ThinkerH ) OkBON1=true;
+  if ( mouseX> YummerX && mouseX< YummerX+YummerW && mouseY> YummerY && mouseY< YummerY+YummerH ) OkBON2=true;
   if ( mouseX> StartX && mouseX< StartX+StartW && mouseY> StartY && mouseY< StartY+StartH ) {
     fill(backgroundColor);
-    rect(HomeX, HomeY, HomeW, HomeH);
-    rect(HomeX1, HomeY1, HomeW, HomeH);
-    rect(HomeX2, HomeY2, HomeW, HomeH);
-    rect(HomeX3, HomeY3, HomeW, HomeH);
-    rect(HomeX5, HomeY5, HomeW, HomeH);
-    rect(HomeX6, HomeY6, HomeW, HomeH);
-    rect(HomeX7, HomeY7, HomeW, HomeH);
-    rect(HomeX8, HomeY8, HomeW, HomeH);
+    Grid();
     fill(White);
   }
 }//End mousePressed

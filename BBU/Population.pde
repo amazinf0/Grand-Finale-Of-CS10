@@ -70,6 +70,11 @@ void populationVariables() {
   StartW = HomeW/2;
   StartH = HomeH*0.668;
   //
+  quitX = HomeX1*1.5;
+  quitY = HomeY1;
+  QuitButtonW = HomeW/2;
+  QuitButtonH = HomeH*0.668;
+  //
   ThinkerX = HomeX6;
   ThinkerY = HomeY6+HomeH*2/3;
   ThinkerW = HomeW*1/4;
@@ -80,9 +85,5 @@ void populationVariables() {
   YummerW = HomeW*1/4;
   YummerH = HomeH*1/3;
   //
-  quitX = HomeX1*1.5;
-  quitY = HomeY1;
-  QuitButtonW = HomeW/2;
-  QuitButtonH = HomeH*0.668;
 }
 //End Population
