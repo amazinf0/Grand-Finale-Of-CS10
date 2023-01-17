@@ -29,7 +29,7 @@ String Chicken = "You Started A Chicken Business To Launder The Money";
 float ChickenX, ChickenY, ChickenW, ChickenH;
 String Yummeries = "Yum";
 float YummyX, YummyY, YummyW, YummyH;
-String Jail = "You Got Caught And Went To Jail For Life";
+String Jail = "An Old Guy Blew You Up";
 float JailX, JailY, JailW, JailH;
 String quitText = "Exit (E)";
 float QuitTX, QuitTY, QuitTW, QuitTH;

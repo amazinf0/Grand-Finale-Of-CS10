@@ -15,7 +15,7 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 Minim minim;
-AudioPlayer song1, song2, correctSoundEffect, incorrectSoundEffect, victorySong;
+AudioPlayer song1, song2, HectorBoom;
 color green=#00FF00,buttonFill, White=#FFFFFF, blue= #00FFFF, backgroundColor, black=#000000, red=#FF0000, yellow=#FFFF00, brown=#643200;
 Boolean StartBON=false, StartBON1=false, OkBON=false, AcceptBON=false, DeclineBON=false, OkBON1=false, OkBON2=false, OkBON3=false, OS_on=false;
 Boolean PPON=false, StopON=false, FastFON=false, FastRON=false, MuteON=false, LoopON=false,song=true, startProgram=false, musical=false, musical1=false;
@@ -23,13 +23,10 @@ float quitX, quitY, QuitButtonW, QuitButtonH;
 //
 void setup() {
   size(1200, 700);
-  //size(displayWidth, displayHeight);
   minim = new Minim(this);
-  song1 = minim.loadFile("../Sounds/Carol of the Bells (Original) Lyrics.mp3");
-  song2 = minim.loadFile("../Sounds/home depot theme song.mp3");
-  correctSoundEffect = minim.loadFile("../Sounds/CorrectSoundEffect.mp3");
-  incorrectSoundEffect = minim.loadFile("../Sounds/Spongebob Disappointed Sound Effect.mp3");
-  victorySong = minim.loadFile("../Sounds/02 Title.mp3");
+  song1 = minim.loadFile("../Sounds/Smokey.mp3");
+  song2 = minim.loadFile("../Sounds/Hermanos.mp3");
+  HectorBoom = minim.loadFile("../Sounds/bell.mp3");
   display();
   populationVariables();
   nightMode();
@@ -206,9 +203,10 @@ void draw() {
     Prison();
     tint(255, 255);
     nightMode();
-    Prison= loadImage("../Images Used/bars.png");
+    Prison= loadImage("../Images Used/hector.png");
     image(Prison, PrisonX, PrisonY, PrisonW, PrisonH);
     Jail();
+    HectorBoom.play();
   }
   //
   //Music Player
@@ -436,10 +434,8 @@ void mousePressed() {
   FastRON=false;
   MuteON=false;
   LoopON=false;
-     correctSoundEffect.pause();
-     correctSoundEffect.rewind();
-     incorrectSoundEffect.pause();
-     incorrectSoundEffect.rewind();
+     HectorBoom.pause();
+     HectorBoom.rewind();
      Functions();
 }//End mousePressed
 //
