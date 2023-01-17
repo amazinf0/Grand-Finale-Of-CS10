@@ -4,16 +4,32 @@
 //sound effects
 //stop
 //fast forward
-//fast rewing
+//fast rewind
 //mute
 //loop
 //B=Button, T=Text, H=Height, W=Width
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+Minim minim;
+AudioPlayer song1, song2, correctSoundEffect, incorrectSoundEffect, victorySong;
 color green=#00FF00,buttonFill, White=#FFFFFF, blue= #00FFFF, backgroundColor, black=#000000, red=#FF0000, yellow=#FFFF00, brown=#643200;
 Boolean StartBON=false, StartBON1=false, OkBON=false, AcceptBON=false, DeclineBON=false, OkBON1=false, OkBON2=false, OkBON3=false, OS_on=false;
+Boolean PPON=false, StopON=false, FastFON=false, FastRON=false, MuteON=false, LoopON=false,song=true, startProgram=false, musical=false, musical1=false;
 float quitX, quitY, QuitButtonW, QuitButtonH;
 //
 void setup() {
   size(1200, 700);
+  //size(displayWidth, displayHeight);
+  minim = new Minim(this);
+  song1 = minim.loadFile("../Sounds/Carol of the Bells (Original) Lyrics.mp3");
+  song2 = minim.loadFile("../Sounds/home depot theme song.mp3");
+  correctSoundEffect = minim.loadFile("../Sounds/CorrectSoundEffect.mp3");
+  incorrectSoundEffect = minim.loadFile("../Sounds/Spongebob Disappointed Sound Effect.mp3");
+  victorySong = minim.loadFile("../Sounds/02 Title.mp3");
   display();
   populationVariables();
   nightMode();
@@ -194,14 +210,218 @@ void draw() {
     image(Prison, PrisonX, PrisonY, PrisonW, PrisonH);
     Jail();
   }
+  //
+  //Music Player
+  //
+  //
+  if ( mouseX> PPX && mouseX< PPX+PPW && mouseY> PPY && mouseY< PPY+PPH ) {
+      buttonFill = blue;
+    } else {
+      buttonFill = red;
+    }
+    fill(buttonFill);
+  rect(PPX, PPY, PPW, PPH);
+  PlayPause();
+  //
+  if ( PPON==true ) {
+     if (song) {
+      if (song1.isPlaying()) {
+        song1.pause();
+        PPON=false;
+      } else if (song1.position()>= song1.length()*4/5) {
+        song1.rewind();
+        song1.play();
+        PPON=false;
+      } else {
+        song1.play();
+        PPON=false;
+      }
+    } else {
+      if (song2.isPlaying()) {
+        song2.pause();
+        PPON=false;
+      } else if (song2.position()>= song2.length()*4/5) {
+        song2.rewind();
+        song2.play();
+        PPON=false;
+      } else {
+        song2.play();
+        PPON=false;
+      }
+    }
+  }
+  //
+  if ( mouseX> StopX && mouseX< StopX+StopW && mouseY> StopY && mouseY< StopY+StopH ) {
+      buttonFill = blue;
+    } else {
+      buttonFill = red;
+    }
+    fill(buttonFill);
+  rect(StopX, StopY, StopW, StopH);
+  Ending();
+  //
+  if ( StopON==true ) {
+    if (song1.isPlaying()) {
+      song1.pause();
+      song1.rewind();
+      song1.play();
+      StopON=false;
+    } else if (song2.isPlaying()==false) {
+      song1.rewind();
+      song1.play();
+      StopON=false;
+    }
+    if (song2.isPlaying()) {
+      song2.pause();
+      song2.rewind();
+      song2.play();
+      StopON=false;
+    } else if (song1.isPlaying()==false) {
+      song2.rewind();
+      song2.play();
+      StopON=false;
+    }
+  }
+  
+  if ( mouseX> FastFX && mouseX< FastFX+FastFW && mouseY> FastFY && mouseY< FastFY+FastFH ) {
+      buttonFill = blue;
+    } else {
+      buttonFill = red;
+    }
+    fill(buttonFill);
+  rect(FastFX, FastFY, FastFW, FastFH);
+  FastForward();
+  //
+  if ( FastFON==true ) {
+    if (song1.isPlaying()) {
+      song1.skip(5000);
+      FastFON=false;
+    }
+    if (song2.isPlaying()) {
+      song2.skip(5000);
+      FastFON=false;
+    }
+  }
+  //
+  if ( mouseX> FastRX && mouseX< FastRX+FastRW && mouseY> FastRY && mouseY< FastRY+FastRH ) {
+      buttonFill = blue;
+    } else {
+      buttonFill = red;
+    }
+    fill(buttonFill);
+  rect(FastRX, FastRY, FastRW, FastRH);
+  FastRewind();
+  //
+  if ( FastRON==true ) {
+    if (song1.isPlaying()) {
+      song1.skip(-5000);
+      FastRON=false;
+    }
+    if (song2.isPlaying()) {
+      song2.skip(-5000);
+      FastRON=false;
+      
+    }
+  }
+  //
+  if ( mouseX> MuteX && mouseX< MuteX+MuteW && mouseY> MuteY && mouseY< MuteY+MuteH ) {
+      buttonFill = blue;
+    } else {
+      buttonFill = red;
+    }
+    fill(buttonFill);
+  rect(MuteX, MuteY, MuteW, MuteH);
+  Shut();
+  //
+  if ( MuteON==true ) {
+    if (song1.isPlaying()) {
+      if (song1.isMuted()) {
+        song1.unmute();
+        MuteON=false;
+      } else {
+        song1.mute();
+        MuteON=false;
+      }
+    }
+    if (song2.isPlaying()) {
+      if (song2.isMuted()) {
+        song2.unmute();
+        MuteON=false;
+      } else {
+        song2.mute();
+        MuteON=false;
+      }
+    }
+  }
+  //
+  if ( mouseX> LoopX && mouseX< LoopX+LoopW && mouseY> LoopY && mouseY< LoopY+LoopH ) {
+      buttonFill = blue;
+    } else {
+      buttonFill = red;
+    }
+    fill(buttonFill);
+  rect(LoopX, LoopY, LoopW, LoopH);
+  Loop();
+  //
+   if ( LoopON==true ) {
+  if (song1.isPlaying()) {
+      song1.loop(-1);
+      FastRON=false;
+    }
+    if (song2.isPlaying()) {
+      song2.loop(-1);
+    LoopON=false;
+   }
+   }
+   //
+   if ( mouseX> musicX && mouseX< musicX+musicW && mouseY> musicY && mouseY< musicY+musicH ) {
+      buttonFill = blue;
+    } else {
+      buttonFill = red;
+    }
+    fill(buttonFill);
+  rect(musicX, musicY, musicW, musicH);
+  songy1();
+  //
+  if (musical==true){
+    
+    song2.pause();
+    song2.rewind();
+    song1.unmute();
+    song1.play();
+    musical=false;
+  }
+  //
+  if ( mouseX> musicX1 && mouseX< musicX1+musicW1 && mouseY> musicY1 && mouseY< musicY1+musicH1 ) {
+      buttonFill = blue;
+    } else {
+      buttonFill = red;
+    }
+    fill(buttonFill);
+  rect(musicX1, musicY1, musicW1, musicH1);
+  songy2();
+  //
+  if (musical1==true){
+    
+    song1.pause();
+    song1.rewind();
+    song2.unmute();
+    song2.play();
+    musical1=false;
+  }
+  //
 }//End draw
 //
 void keyPressed() {
+  if (OS_on && key==' ') {
+    startProgram=true;
+    OS_on=false;
+  }
   if (key=='e' || key=='E') exit();
 }//End keyPressed
 //
 void mousePressed() {
-if ( OS_on==false ) OS_on=true;
+  if (OS_on==false && startProgram==false) OS_on=true;
   StartBON=false;
   StartBON1=false;
   OkBON=false;
@@ -209,25 +429,18 @@ if ( OS_on==false ) OS_on=true;
   DeclineBON=false;
   OkBON1=false;
   OkBON2=false;
-  if (mouseX> quitX && mouseX< quitX+QuitButtonW && mouseY> quitY && mouseY< quitY+QuitButtonH) exit();
-  if ( mouseX>=PathX && mouseX<=PathX+PathW && mouseY>=PathY && mouseY<=PathY+PathH ) StartBON=true;
-  if ( mouseX>=PathX1 && mouseX<=PathX1+PathW1 && mouseY>=PathY1 && mouseY<=PathY+PathH1 ) StartBON1=true;
-  if ( mouseX>=OkX && mouseX<=OkX+OkW && mouseY>=OkY && mouseY<=OkY+OkH ) OkBON=true;
-  if ( mouseX>=AcceptBX && mouseX<=AcceptBX+AcceptBW && mouseY>=AcceptBY && mouseY<=AcceptBY+AcceptBH ) {    
-    AcceptBON=true;
-    DeclineBON=false;
-  }
-  if ( mouseX>=DeclineX && mouseX<=DeclineX+DeclineW && mouseY>=DeclineY && mouseY<=DeclineY+DeclineH ) {
-    DeclineBON=true;
-    AcceptBON=false;
-  }
-  if ( mouseX> ThinkerX && mouseX< ThinkerX+ThinkerW && mouseY> ThinkerY && mouseY< ThinkerY+ThinkerH ) OkBON1=true;
-  if ( mouseX> YummerX && mouseX< YummerX+YummerW && mouseY> YummerY && mouseY< YummerY+YummerH ) OkBON2=true;
-  if ( mouseX> StartX && mouseX< StartX+StartW && mouseY> StartY && mouseY< StartY+StartH ) {
-    fill(backgroundColor);
-    Grid();
-    fill(White);
-  }
+  //
+  PPON=false;
+  StopON=false;
+  FastFON=false;
+  FastRON=false;
+  MuteON=false;
+  LoopON=false;
+     correctSoundEffect.pause();
+     correctSoundEffect.rewind();
+     incorrectSoundEffect.pause();
+     incorrectSoundEffect.rewind();
+     Functions();
 }//End mousePressed
 //
 //End MAIN Program

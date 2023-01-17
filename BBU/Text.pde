@@ -34,6 +34,14 @@ float JailX, JailY, JailW, JailH;
 String quitText = "Exit (E)";
 float QuitTX, QuitTY, QuitTW, QuitTH;
 PFont QuitF;
+String PlayText = "Play \n Pause";
+String EndText = "Reset";
+String ForwardText = "Forward";
+String BackwardText = "Rewind";
+String ShutText = "Mute";
+String ReplayText = "Loop";
+String MusicText = "Song 1";
+String MusicText1 = "Song 2";
 //
 void Option1() {
   //Population
@@ -248,4 +256,73 @@ void Jail() {
   textFont(Font, bigSize);
   text(quitText, QuitTX, QuitTY, QuitTW, QuitTH);
 }
+//
+void PlayPause() {
+  Font1 = createFont("TimesNewRomanPSMT", 603);
+  fill(White);
+  textAlign(CENTER, CENTER);
+  textFont(Font1, smallSize);
+  text(PlayText, PPX, PPY, PPW, PPH);
+  fill(White);
+}
+  //
+  void Ending() {
+  fill(White);
+  textAlign(CENTER, CENTER);
+  textFont(Font1, smallSize);
+  text(EndText, StopX, StopY, StopW, StopH);
+  fill(White);
+  }
+  //
+  void FastForward() {
+  fill(White);
+  textAlign(CENTER, CENTER);
+  textFont(Font1, 18);
+  text(ForwardText, FastFX, FastFY, FastFW, FastFH);
+  fill(White);
+  }
+  //
+  void FastRewind() {
+  fill(White);
+  textAlign(CENTER, CENTER);
+  textFont(Font1, smallSize);
+  text(BackwardText, FastRX, FastRY, FastRW, FastRH);
+  fill(White);
+  }
+  //
+  void Shut() {
+  fill(White);
+  textAlign(CENTER, CENTER);
+  textFont(Font1, smallSize);
+  text(ShutText, MuteX, MuteY, MuteW, MuteH);
+  fill(White);
+  }
+  //
+  void Loop() {
+  fill(White);
+  textAlign(CENTER, CENTER);
+  textFont(Font1, smallSize);
+  text(ReplayText, LoopX, LoopY, LoopW, LoopH);
+  fill(White);
+  }
+  //
+  void songy1() {
+  Font1 = createFont("TimesNewRomanPSMT", 603);
+  fill(White);
+  textAlign(CENTER, CENTER);
+  textFont(Font1, smallSize);
+  text(MusicText, musicX, musicY, musicW, musicH);
+  fill(White);
+}
+//
+void songy2() {
+  Font1 = createFont("TimesNewRomanPSMT", 603);
+  fill(White);
+  textAlign(CENTER, CENTER);
+  textFont(Font1, smallSize);
+  text(MusicText1, musicX1, musicY1, musicW1, musicH1);
+  fill(White);
+}
+//
+
 //End Text

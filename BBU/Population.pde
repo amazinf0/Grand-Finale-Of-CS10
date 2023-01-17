@@ -9,6 +9,14 @@ float DeclineX, DeclineY, DeclineW, DeclineH;
 float StartX, StartY, StartW, StartH;
 float ThinkerX, ThinkerY, ThinkerW, ThinkerH;
 float YummerX, YummerY, YummerW, YummerH;
+float PPX, PPY, PPW, PPH;
+float StopX, StopY, StopW, StopH;
+float FastFX, FastFY, FastFW, FastFH;
+float FastRX, FastRY, FastRW, FastRH;
+float MuteX, MuteY, MuteW, MuteH;
+float LoopX, LoopY, LoopW, LoopH;
+float musicX, musicY, musicW, musicH;
+float musicX1, musicY1, musicW1, musicH1;
 //
 void populationVariables() {
   HomeW = width*1/3;
@@ -42,13 +50,13 @@ void populationVariables() {
   //
   PathX = HomeX4;
   PathY = HomeY4*0.67;
-  PathW = width*1/6;
-  PathH = height*0.98/9;
+  PathW = width*0.67/6;
+  PathH = height*0.98/9; //height*0.98/9;
   //
-  PathX1 = PathX + width*1/6;
-  PathY1 = PathY;
-  PathW1 = PathW;
-  PathH1 = PathH;
+  PathX1 = HomeX4*1.665; //width*1/6;
+  PathY1 = HomeY4*0.67;
+  PathW1 = width*0.67/6;
+  PathH1 = height*0.98/9;
   //
   OkX = HomeX3;
   OkY = HomeY3+HomeH*5/6;
@@ -68,12 +76,52 @@ void populationVariables() {
   StartX = HomeX1;
   StartY = HomeY1;
   StartW = HomeW/2;
-  StartH = HomeH*0.668;
+  StartH = HomeH*0.334;
   //
   quitX = HomeX1*1.5;
   quitY = HomeY1;
   QuitButtonW = HomeW/2;
-  QuitButtonH = HomeH*0.668;
+  QuitButtonH = HomeH*0.334;
+  //
+  PPX = HomeX+HomeW;
+  PPY = HomeY+HomeH/3;
+  PPW = HomeW*1/5.805;
+  PPH = HomeH*0.337;
+  //
+  StopX = HomeX+HomeW*1.17;
+  StopY = HomeY+HomeH/3;
+  StopW = HomeW*1/6;
+  StopH = HomeH*0.337;
+  //
+  FastFX = HomeX+HomeW*1.335;
+  FastFY = HomeY+HomeH/3;
+  FastFW = HomeW*1/6;
+  FastFH = HomeH*0.337;
+  //
+  musicX = HomeX+HomeW*1.335;
+  musicY = HomeY4*0.67;
+  musicW = HomeW*1/6;
+  musicH = height*0.98/9;
+  //
+  FastRX = HomeX+HomeW*1.5;
+  FastRY = HomeY+HomeH/3;
+  FastRW = HomeW*1/6;
+  FastRH = HomeH*0.337;
+  //
+  musicX1 = HomeX+HomeW*1.5;
+  musicY1 = HomeY4*0.67;
+  musicW1 = HomeW*1/6;
+  musicH1 = height*0.98/9; 
+  //
+  MuteX = HomeX+HomeW*1.666;
+  MuteY = HomeY+HomeH/3;
+  MuteW = HomeW*1/6;
+  MuteH = HomeH*0.337;
+  //
+  LoopX = HomeX+HomeW*1.833;
+  LoopY = HomeY+HomeH/3;
+  LoopW = HomeW*1/5.93;
+  LoopH = HomeH*0.337;
   //
   ThinkerX = HomeX6;
   ThinkerY = HomeY6+HomeH*2/3;
