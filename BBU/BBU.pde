@@ -18,7 +18,7 @@ Minim minim;
 AudioPlayer song1, song2, HectorBoom;
 color green=#00FF00,buttonFill, White=#FFFFFF, blue= #00FFFF, backgroundColor, black=#000000, red=#FF0000, yellow=#FFFF00, brown=#643200;
 Boolean StartBON=false, StartBON1=false, OkBON=false, AcceptBON=false, DeclineBON=false, OkBON1=false, OkBON2=false, OkBON3=false, OS_on=false;
-Boolean PPON=false, StopON=false, FastFON=false, FastRON=false, MuteON=false, LoopON=false,song=true, startProgram=false, musical=false, musical1=false;
+Boolean PPON=false, StopON=false, FastFON=false, FastRON=false, MuteON=false, LoopON=false,song=true, App=false, musical=false, musical1=false;
 float quitX, quitY, QuitButtonW, QuitButtonH;
 //
 void setup() {
@@ -364,7 +364,7 @@ void draw() {
    if ( LoopON==true ) {
   if (song1.isPlaying()) {
       song1.loop(-1);
-      FastRON=false;
+      LoopON=false;
     }
     if (song2.isPlaying()) {
       song2.loop(-1);
@@ -412,14 +412,14 @@ void draw() {
 //
 void keyPressed() {
   if (OS_on && key==' ') {
-    startProgram=true;
+    App=true;
     OS_on=false;
   }
   if (key=='e' || key=='E') exit();
 }//End keyPressed
 //
 void mousePressed() {
-  if (OS_on==false && startProgram==false) OS_on=true;
+  if (OS_on==false && App==false) OS_on=true;
   StartBON=false;
   StartBON1=false;
   OkBON=false;
