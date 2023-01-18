@@ -222,32 +222,8 @@ void draw() {
   PlayPause();
   //
   if ( PPON==true ) {
-     if (song) {
-      if (song1.isPlaying()) {
-        song1.pause();
-        PPON=false;
-      } else if (song1.position()>= song1.length()*4/5) {
-        song1.rewind();
-        song1.play();
-        PPON=false;
-      } else {
-        song1.play();
-        PPON=false;
-      }
-    } else {
-      if (song2.isPlaying()) {
-        song2.pause();
-        PPON=false;
-      } else if (song2.position()>= song2.length()*4/5) {
-        song2.rewind();
-        song2.play();
-        PPON=false;
-      } else {
-        song2.play();
-        PPON=false;
-      }
+     
     }
-  }
   //
   if ( mouseX> StopX && mouseX< StopX+StopW && mouseY> StopY && mouseY< StopY+StopH ) {
       buttonFill = blue;
@@ -385,9 +361,19 @@ void draw() {
     
     song2.pause();
     song2.rewind();
-    song1.unmute();
-    song1.play();
-    musical=false;
+    if (song) {
+      if (song1.isPlaying()) {
+        song1.pause();
+        musical=false;
+      } else if (song1.position()>= song1.length()*4/5) {
+        song1.rewind();
+        song1.play();
+        musical=false;
+      } else {
+        song1.play();
+        musical=false;
+      }
+    }
   }
   //
   if ( mouseX> musicX1 && mouseX< musicX1+musicW1 && mouseY> musicY1 && mouseY< musicY1+musicH1 ) {
@@ -403,12 +389,23 @@ void draw() {
     
     song1.pause();
     song1.rewind();
-    song2.unmute();
-    song2.play();
-    musical1=false;
+    if (song) {
+      if (song2.isPlaying()) {
+        song2.pause();
+        musical1=false;
+      } else if (song2.position()>= song2.length()*4/5) {
+        song2.rewind();
+        song2.play();
+        musical1=false;
+      } else {
+        song2.play();
+        musical1=false;
+      }
+    }
   }
+}
   //
-}//End draw
+//End draw
 //
 void keyPressed() {
   if (OS_on && key==' ') {
